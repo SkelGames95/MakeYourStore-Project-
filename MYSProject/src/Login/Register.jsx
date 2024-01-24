@@ -2,18 +2,18 @@ import { useState } from "react"
 import classes from './Register.module.scss'
 
 const Register=(props)=>{
-const [name,setName]=useState("")  
+// const [name,setName]=useState("")  
 const [email,setEmail]=useState("")
 const [password,setPassword]=useState("")
 const [password2, setPassword2]=useState("")
-const [error,setError] = useState({})
+const [error,setError] = useState()
 
 
 const handleSubmit=(e)=>{
     e.preventDefault()
     console.log(email)
     if(password !== password2 && validationPassword(password)){
-        setError("Le password non sono corrispondenti")
+        setError("Le password non sono corrispondenti!")
     }
 }
 
@@ -21,19 +21,7 @@ const validationPassword = (password) => {
     const passwordTry = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(.{8,})$/;
     return passwordTry.test(password)
 }
-// return(
-//     <div>
-//         <div>
-//             <form onSubmit={handleSubmit}>
-//             <input type="text"name="name"value={name}placeholder="Username"onChange={((e)=>setName(e.target.value))} />
-//             <input type="text"name="email"value={email}placeholder="Email"onChange={((e)=>setEmail(e.target.value))} />
-//             <input type="password" name="password"value={password}placeholder="Password"onChange={((e)=>setPassword(e.target.value))} />
-//         </form>
-//         <button onClick={props.onFormSwitch}>Don't have account? Register here.</button>
-//         </div>
-      
-//     </div>
-// )
+
 return (
     <div className={classes.container}>
       <div className={classes.containerForm}>
@@ -66,6 +54,7 @@ return (
               placeholder="Re-Enter Password"
               onChange={(e) => setPassword2(e.target.value)}
             />
+            {error && <p className={classes.error}>{error}</p>}
             <button type="submit">
                 Register
             </button>
