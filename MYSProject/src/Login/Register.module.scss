@@ -138,9 +138,11 @@ input::placeholder{
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 .imgform img {
-    height: 91%;
+    height:100%;
     width: 100%;
     margin-left: 20px;
 }
