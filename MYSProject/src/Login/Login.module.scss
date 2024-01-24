@@ -5,7 +5,6 @@
 }
 .containerlogin{
     height: 100vh;
-    background-color: aqua;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,11 +12,131 @@
 
 .login{
     width: 50%;
-    height: 75%;
-    background-color:rgba(0, 0, 255, 0.685);
+    height: 100%;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
 
+.containerForm{
+    width: 55%;
+    height: 75%;
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.289);
+    border-radius: 15px;
+}
+
+.imgform{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 70%;
+}
+
+input{
+    background-color: transparent;
+    height: 10%;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-color: black;
+    outline: none;
+    width: 100%;
+}
+
+// .form button{
+//     width: 60%;
+//     padding: 1em;
+//     border-radius: 5px;
+//     transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+// }
+
+// .form button:hover{
+//     transform: scale(1.05);
+//     transition: 0.3s;
+// }
+
+.form button {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
+    background-color: #181818;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ffff;
+    gap: 10px;
+    font-weight: bold;
+    border: 3px solid #ffffff4d;
+    outline: none;
+    overflow: hidden;
+    font-size: 15px;
+  }
+  
+  
+  .form button:hover {
+    transform: scale(1.05);
+    border-color: #fff9;
+  }
+  
+  
+  .form button:hover::before {
+    animation: shine 1.5s ease-out infinite;
+  }
+  
+  .form button::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    opacity: 0.6;
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -100px;
+    }
+  
+    60% {
+      left: 100%;
+    }
+  
+    to {
+      left: 100%;
+    }
+  }
+
+.signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgform img{
+    height: 100%;
+    width: 100%;
 }
