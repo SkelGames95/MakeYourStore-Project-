@@ -13,7 +13,7 @@ const Login = () => {
       <div className={classes.containerForm}>
         <div className={classes.login}>
           <form className={classes.form} onSubmit={handleSubmit}>
-            <h2 className={classes.signup}>Sign up</h2>
+            <h2 className={classes.signin}>Sign in</h2>
             <input
               type="text"
               name="email"
@@ -29,19 +29,16 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
             <button type="submit">
-              Apply Now
+                Log in
             </button>
-            <p>
+            <p className={classes.donthave}>
               Don't have an account? <a href="">Register</a>
             </p>
           </form>
         </div>
         <div className={classes.imgform}>
-          <div>
-            <img
-              src="https://thumbs.dreamstime.com/b/superficie-praticante-il-surfing-dell-acqua-onda-di-oceano-mare-124362369.jpg"
-              alt=""
-            />
+          <div className={classes.displayflex}>
+            <img src="/spiderkid.png"alt=""/>
           </div>
         </div>
       </div>

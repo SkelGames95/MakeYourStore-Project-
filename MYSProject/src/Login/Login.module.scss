@@ -2,12 +2,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: cursive;
 }
 .containerlogin{
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url("Prova-sfondo-slide.png")
 }
 
 .login{
@@ -20,11 +22,16 @@
 }
 
 .containerForm{
+    
     width: 55%;
     height: 75%;
     display: flex;
     border: 1px solid rgba(0, 0, 0, 0.289);
-    border-radius: 15px;
+    border-radius: 15px; 
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(245, 245, 245, 0.288);
+    
 }
 
 .imgform{
@@ -41,7 +48,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
     width: 70%;
 }
 
@@ -51,11 +58,15 @@ input{
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    border-color: black;
+    border-color: rgb(255, 255, 255);
     outline: none;
     width: 100%;
+    color: whitesmoke;
 }
-
+input::placeholder{
+    color: whitesmoke;
+    font-size: 20px;
+}
 // .form button{
 //     width: 60%;
 //     padding: 1em;
@@ -69,6 +80,7 @@ input{
 // }
 
 .form button {
+    width: 60%;
     position: relative;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
@@ -81,12 +93,11 @@ input{
     justify-content: center;
     cursor: pointer;
     color: #ffff;
-    gap: 10px;
     font-weight: bold;
     border: 3px solid #ffffff4d;
     outline: none;
     overflow: hidden;
-    font-size: 15px;
+    font-size: 20px;
   }
   
   
@@ -130,13 +141,29 @@ input{
     }
   }
 
-.signup{
+.signin{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 80px;
+    color: whitesmoke;
+    
 }
-
-.imgform img{
+.displayflex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imgform img {
+    object-fit: cover;
     height: 100%;
     width: 100%;
+    
+}
+.donthave{
+    color: whitesmoke;
+}
+.donthave a {
+    color: greenyellow;
+    text-decoration: none;
 }
