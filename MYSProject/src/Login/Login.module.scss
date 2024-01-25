@@ -65,7 +65,7 @@ input::placeholder{
     color: whitesmoke;
     font-size: 20px;
 }
-
+//////////////////////////////////////////////
 .form button {
     width: 60%;
     position: relative;
@@ -125,13 +125,14 @@ input::placeholder{
       left: 100%;
     }
 }
-
+///////////////////////////////////////////////
 .signin{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 80px;
+    font-size: 5vw;
     color: whitesmoke;
+    
 }
 .displayflex{
     display: flex;
@@ -145,6 +146,7 @@ input::placeholder{
 }
 .donthave{
     color: whitesmoke;
+    font-size: 1vw;
 }
 .donthave a {
     color: #ddea6f;

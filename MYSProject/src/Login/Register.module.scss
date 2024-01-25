@@ -66,7 +66,7 @@ input::placeholder{
     color: whitesmoke;
     font-size: 20px;
 }
-
+///////////////////////////////////////////////
 .form button {
     width: 60%;
     position: relative;
@@ -126,12 +126,12 @@ input::placeholder{
       left: 100%;
     }
 }
-
+/////////////////////////////////////////////////////
 .signup{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 80px;
+    font-size: 5vw;
     color: whitesmoke;
 }
 .displayflex{
@@ -148,6 +148,7 @@ input::placeholder{
 }
 .alreadyHave{
     color: whitesmoke;
+    font-size: 1vw;
 }
 .alreadyHave a {
     color: #ddea6f;

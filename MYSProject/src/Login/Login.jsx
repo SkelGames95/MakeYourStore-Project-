@@ -3,10 +3,16 @@ import { useState } from "react";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const[error,setError]=useState({})
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email);
+    const newWrror={}
+    if(email==="")newWrror.email="This is a required field"
+    if(password==="")newWrror.password="This is a required field"
+    setError(newWrror)
+
   };
   return (
     <div className={classes.containerlogin}>
@@ -20,7 +26,8 @@ const Login = () => {
               value={email}
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
-            />
+              style={{borderColor:error.email?"red":""}}/>
+              {error.email&&<p style={{color:"red",fontSize:"30px"}}>{error.email}</p>}
             <input
               type="password"
               name="password"
@@ -28,7 +35,8 @@ const Login = () => {
               required
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
-            />
+              style={{borderColor:error.password?"red":""}}/>
+              {error.password&&<p style={{color:"red"}}>{error.password}</p>}
             <button type="submit">
                 Log in
             </button>
