@@ -55,7 +55,7 @@ return (
               onChange={(e) => setPassword2(e.target.value)}
             />
             {error && <p className={classes.error}>{error}</p>}
-            <button type="submit">
+            <button type="submit">                                          { /*da sostituire con il componente button-login */}
                 Register
             </button>
             <p className={classes.alreadyHave}>

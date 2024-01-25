@@ -37,7 +37,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               style={{borderColor:error.password?"red":""}}/>
               {error.password&&<p style={{color:"red"}}>{error.password}</p>}
-            <button type="submit">
+            <button type="submit">                                   { /*da sostituire con il componente button-login */}
                 Log in
             </button>
             <p className={classes.donthave}>
