@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import classes from "./Login.module.scss";
 import { useState } from "react";
 const Login = () => {
@@ -41,7 +42,7 @@ const Login = () => {
                 Log in
             </button>
             <p className={classes.donthave}>
-              Don't have an account? <a href="">Register</a>
+              Don't have an account? <Link to="/register">Register</Link>
             </p>
           </form>
         </div>

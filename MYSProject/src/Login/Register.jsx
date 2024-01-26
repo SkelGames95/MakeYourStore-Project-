@@ -1,5 +1,7 @@
 import { useState } from "react"
 import classes from './Register.module.scss'
+import { Link } from "react-router-dom"
+import Login from "./Login"
 
 const Register=(props)=>{
 // const [name,setName]=useState("")  
@@ -59,7 +61,7 @@ return (
                 Register
             </button>
             <p className={classes.alreadyHave}>
-              Already have an account? <a href="">Log in</a>
+              Already have an account? <Link to="/login">Login</Link>
             </p>
           </form>
         </div>
