@@ -1,8 +1,10 @@
+import Button from "./Button"
+
 export const App = () => {
 
     return (
         <div>
-            <p>creating repo</p>
+            <Button/>
         </div>
     )
 }
