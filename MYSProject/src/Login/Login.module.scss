@@ -9,7 +9,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("Prova-sfondo-slide.png")
+    // background-position: center;
+    // background-size: cover;
+    // background-image: url("https://img.freepik.com/free-vector/lightspeed-travel-background-centric-motion-star-trails_1217-3827.jpg?w=1480&t=st=1706561893~exp=1706562493~hmac=297a9c7f89533d77ce1ed0cc43aeb72a35dd3c640663b7c65cff86b3846bdfa0")
+    background-color: #181818;
 }
 
 .login{
@@ -29,7 +32,7 @@
     border-radius: 15px; 
     background-color: transparent;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(245, 245, 245, 0.288);
+    border: 1px solid rgba(245, 245, 245, 0.034);
 }
 
 .imgform{
@@ -67,14 +70,15 @@ input::placeholder{
 }
 //////////////////////////////////////////////
 .form button {
-    width: 60%;
+    width: 100%;
+    height: 15%;
     position: relative;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     padding-block: 0.5rem;
     padding-inline: 1.25rem;
     background-color: #181818;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,6 +131,7 @@ input::placeholder{
 }
 ///////////////////////////////////////////////
 .signin{
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,14 +140,18 @@ input::placeholder{
     
 }
 .displayflex{
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .imgform img {
-    object-fit: cover;
     height: 100%;
     width: 100%;
+    background-size: cover;
+    background-position: center;
+    
 }
 .donthave{
     color: whitesmoke;
