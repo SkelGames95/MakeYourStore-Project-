@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import classes from "./Login.module.scss";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const[error,setError]=useState({})
+  const inputRef=useRef(null)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,6 +16,9 @@ const Login = () => {
     setError(newWrror)
 
   };
+  useEffect(()=>{
+    inputRef.current?.focus()
+},[])
   return (
     <div className={classes.containerlogin}>
       <div className={classes.containerForm}>
@@ -22,6 +26,7 @@ const Login = () => {
           <form className={classes.form} onSubmit={handleSubmit}>
             <h2 className={classes.signin}>Sign in</h2>
             <input
+            ref={inputRef}
               type="text"
               name="email"
               value={email}

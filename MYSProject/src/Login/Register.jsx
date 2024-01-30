@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import classes from './Register.module.scss'
 import { Link } from "react-router-dom"
 import Login from "./Login"
@@ -9,7 +9,7 @@ const [email,setEmail]=useState("")
 const [password,setPassword]=useState("")
 const [password2, setPassword2]=useState("")
 const [error,setError] = useState()
-
+const inputRef=useRef(null)
 
 const handleSubmit=(e)=>{
     e.preventDefault()
@@ -23,7 +23,9 @@ const validationPassword = (password) => {
     const passwordTry = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(.{8,})$/;
     return passwordTry.test(password)
 }
-
+useEffect(()=>{
+  inputRef.current?.focus()
+},[])
 return (
     <div className={classes.container}>
       <div className={classes.containerForm}>
@@ -31,6 +33,7 @@ return (
           <form className={classes.form} onSubmit={handleSubmit}>
             <h2 className={classes.signup}>Sign up</h2>
             <input
+            ref={inputRef}
               type="text"
               name="email"
               value={email}
