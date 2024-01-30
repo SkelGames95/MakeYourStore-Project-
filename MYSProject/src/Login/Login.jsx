@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import classes from "./Login.module.scss";
 import { useEffect, useRef, useState } from "react";
+import Button from "../Button-LogReg/Button";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,9 +44,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               style={{borderColor:error.password?"red":""}}/>
               {error.password&&<p style={{color:"red"}}>{error.password}</p>}
-            <button type="submit">                                   { /*da sostituire con il componente button-login */}
-                Log in
-            </button>
+            <Button type="submit" label={"Log in"}/>
             <p className={classes.donthave}>
               Don't have an account? <Link to="/register">Register</Link>
             </p>

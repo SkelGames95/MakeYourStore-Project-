@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import classes from './Register.module.scss'
 import { Link } from "react-router-dom"
 import Login from "./Login"
+import Button from "../Button-LogReg/Button"
 
 const Register=(props)=>{
 // const [name,setName]=useState("")  
@@ -60,9 +61,7 @@ return (
               onChange={(e) => setPassword2(e.target.value)}
             />
             {error && <p className={classes.error}>{error}</p>}
-            <button type="submit">                                          { /*da sostituire con il componente button-login */}
-                Register
-            </button>
+            <Button type="submit" label={"Register"}/>
             <p className={classes.alreadyHave}>
               Already have an account? <Link to="/login">Login</Link>
             </p>
@@ -70,7 +69,7 @@ return (
         </div>
         <div className={classes.imgform}>
           <div className={classes.displayflex}>
-            <img src="/batman-login.png" alt=""/>
+            <img src="/flash.webp" alt=""/>
           </div>
         </div>
       </div>
