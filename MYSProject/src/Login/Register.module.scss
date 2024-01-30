@@ -2,15 +2,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: fantasy;
 }
 .container{
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    // background-image: url("Prova-sfondo-slide.png")
-    background-color: #181818;
+    background-image: url("Prova-sfondo-slide.png");
 }
 
 .register{
@@ -30,10 +29,18 @@
     border: 1px solid rgba(0, 0, 0, 0.289);
     border-radius: 15px; 
     background-color: transparent;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(30px);
     border: 1px solid rgba(245, 245, 245, 0.034);
+    animation: fadeInOut 2s ease-in-out 1;
 }
-
+@keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 .imgform{
     width: 50%;
     height: 100%;
@@ -48,13 +55,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 2.5rem;
     width: 70%;
 }
 
 input{
     background-color: transparent;
-    height: 10%;
+    height: 65px;
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -122,6 +129,9 @@ input::placeholder{
     width: 70vw;
     display: flex;
     flex-direction: column;
+  }
+  .signup{
+    font-size: 10vw;
   }
   .displayflex{
     display: none;
