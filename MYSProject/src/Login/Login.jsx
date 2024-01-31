@@ -8,12 +8,39 @@ const Login = () => {
   const[error,setError]=useState({})
   const inputRef=useRef(null)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email);
     const newWrror={}
     if(email==="")newWrror.email="This is a required field"
     if(password==="")newWrror.password="This is a required field"
+    // try {
+    //   const response = await fetch("http://localhost:3000/Login", {
+    //     method: 'POST',  // Aggiunto il metodo POST
+    //     headers: {
+    //       'Content-Type': 'application/json',  // Specificato il tipo di contenuto
+    //     },
+    //     body: JSON.stringify({
+    //       email,
+    //       password
+    //     }),
+    //   });
+    
+    //   if (response.status === 200) {
+    //     const data = await response.json();
+    //     console.log(data);
+    //     localStorage.setItem("token", data.token);
+    //     localStorage.setItem("user", JSON.stringify(data.user));
+    //   } else {
+    //     // Gestisci gli altri codici di stato qui, ad esempio 404 o 500
+    //     console.log("Errore nella richiesta. Codice di stato:", response.status);
+    //     setError("Error!");
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    //   setError("Si è verificato un errore durante la richiesta.");
+    // }
+
     setError(newWrror)
 
   };
@@ -34,7 +61,7 @@ const Login = () => {
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
               style={{borderColor:error.email?"red":""}}/>
-              {error.email&&<p style={{color:"red",fontSize:"30px"}}>{error.email}</p>}
+              {error.email&&<p style={{color:"red",fontSize:"20px"}}>{error.email}</p>}
             <input
               type="password"
               name="password"

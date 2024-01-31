@@ -15,8 +15,9 @@ const inputRef=useRef(null)
 const handleSubmit=(e)=>{
     e.preventDefault()
     console.log(email)
+    if(email==="")newWrror.email="This is a required field"
     if(password !== password2 && validationPassword(password)){
-        setError("Le password non sono corrispondenti!")
+        setError("Passwords do not match!")
     }
 }
 
@@ -49,7 +50,7 @@ return (
               minLength={8}
               placeholder="Password"
               pattern="^(?=.*[A-Z])(?=.*[!@#$%^&*])(.{8,})$"
-              title="La password deve essere lunga almeno 8 caratteri ed avere una lettera maiuscola iniziale"
+              title="The password must be at least 8 characters long and have an initial capital letter"
               onChange={(e) => setPassword(e.target.value)}
             />
             <input
