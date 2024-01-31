@@ -33,12 +33,12 @@ const Login = () => {
     //     localStorage.setItem("user", JSON.stringify(data.user));
     //   } else {
     //     // Gestisci gli altri codici di stato qui, ad esempio 404 o 500
-    //     console.log("Errore nella richiesta. Codice di stato:", response.status);
+    //     console.log("Error in request. Status code:", response.status);
     //     setError("Error!");
     //   }
     // } catch (error) {
     //   console.error(error);
-    //   setError("Si è verificato un errore durante la richiesta.");
+    //   setError("An error occurred during the request.");
     // }
 
     setError(newWrror)
