@@ -16,9 +16,9 @@ const Login = () => {
     if(password==="")newWrror.password=""
     // try {
     //   const response = await fetch("http://localhost:3000/Login", {
-    //     method: 'POST',  // Aggiunto il metodo POST
+    //     method: 'POST',  //  metodo POST
     //     headers: {
-    //       'Content-Type': 'application/json',  // Specificato il tipo di contenuto
+    //       'Content-Type': 'application/json',  // tipo di contenuto
     //     },
     //     body: JSON.stringify({
     //       email,
@@ -32,7 +32,6 @@ const Login = () => {
     //     localStorage.setItem("token", data.token);
     //     localStorage.setItem("user", JSON.stringify(data.user));
     //   } else {
-    //     // Gestisci gli altri codici di stato qui, ad esempio 404 o 500
     //     console.log("Error in request. Status code:", response.status);
     //     setError("Error!");
     //   }
