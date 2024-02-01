@@ -5,15 +5,15 @@ import Button from "../Button-LogReg/Button";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const[error,setError]=useState({})
-  const inputRef=useRef(null)
+  const [error, setError] = useState({});
+  const inputRef = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email);
-    const newWrror={}
-    if(email==="")newWrror.email="This is a required field"
-    if(password==="")newWrror.password="This is a required field"
+    const newWrror = {};
+    if (email === "") newWrror.email = "This is a required field";
+    if (password === "") newWrror.password = "This is a required field";
     // try {
     //   const response = await fetch("http://localhost:3000/Login", {
     //     method: 'POST',  // Aggiunto il metodo POST
@@ -25,7 +25,7 @@ const Login = () => {
     //       password
     //     }),
     //   });
-    
+
     //   if (response.status === 200) {
     //     const data = await response.json();
     //     console.log(data);
@@ -41,12 +41,11 @@ const Login = () => {
     //   setError("An error occurred during the request.");
     // }
 
-    setError(newWrror)
-
+    setError(newWrror);
   };
-  useEffect(()=>{
-    inputRef.current?.focus()
-},[])
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
   return (
     <div className={classes.containerlogin}>
       <div className={classes.containerForm}>
@@ -54,24 +53,30 @@ const Login = () => {
           <form className={classes.form} onSubmit={handleSubmit}>
             <h2 className={classes.signin}>Sign in</h2>
             <input
-            ref={inputRef}
-              type="text"
+              className={classes.input}
+              ref={inputRef}
+              type="email"
               name="email"
               value={email}
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
-              style={{borderColor:error.email?"red":""}}/>
-              {error.email&&<p style={{color:"red",fontSize:"20px"}}>{error.email}</p>}
+              style={{ borderColor: error.email ? "red" : "" }}
+            />
+            {error.email && (
+              <p style={{ color: "red", fontSize: "20px" }}>{error.email}</p>
+            )}
             <input
+              className={classes.input}
               type="password"
               name="password"
               value={password}
               required
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
-              style={{borderColor:error.password?"red":""}}/>
-              {error.password&&<p style={{color:"red"}}>{error.password}</p>}
-            <Button type="submit" label={"Log in"}/>
+              style={{ borderColor: error.password ? "red" : "" }}
+            />
+            {error.password && <p style={{ color: "red" }}>{error.password}</p>}
+            <Button type="submit" label={"Log in"} />
             <p className={classes.donthave}>
               Don't have an account? <Link to="/register">Register</Link>
             </p>
@@ -79,7 +84,7 @@ const Login = () => {
         </div>
         <div className={classes.imgform}>
           <div className={classes.displayflex}>
-            <img src="/spide.jpg"alt=""/>
+            <img src="/spide.jpg" alt="" />
           </div>
         </div>
       </div>

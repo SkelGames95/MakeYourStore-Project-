@@ -1,48 +1,50 @@
-import { useEffect, useRef, useState } from "react"
-import classes from './Register.module.scss'
-import { Link } from "react-router-dom"
-import Login from "./Login"
-import Button from "../Button-LogReg/Button"
+import { useEffect, useRef, useState } from "react";
+import classes from "./Register.module.scss";
+import { Link } from "react-router-dom";
+import Login from "./Login";
+import Button from "../Button-LogReg/Button";
 
-const Register=(props)=>{
-// const [name,setName]=useState("")  
-const [email,setEmail]=useState("")
-const [password,setPassword]=useState("")
-const [password2, setPassword2]=useState("")
-const [error,setError] = useState()
-const inputRef=useRef(null)
+const Register = (props) => {
+  // const [name,setName]=useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [error, setError] = useState();
+  const inputRef = useRef(null);
 
-const handleSubmit=(e)=>{
-    e.preventDefault()
-    console.log(email)
-    if(email==="")newWrror.email="This is a required field"
-    if(password !== password2 && validationPassword(password)){
-        setError("Passwords do not match!")
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(email);
+    if (email === "") newWrror.email = "This is a required field";
+    if (password !== password2 && validationPassword(password)) {
+      setError("Passwords do not match!");
     }
-}
+  };
 
-const validationPassword = (password) => {
+  const validationPassword = (password) => {
     const passwordTry = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(.{8,})$/;
-    return passwordTry.test(password)
-}
-useEffect(()=>{
-  inputRef.current?.focus()
-},[])
-return (
+    return passwordTry.test(password);
+  };
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+  return (
     <div className={classes.container}>
       <div className={classes.containerForm}>
         <div className={classes.register}>
           <form className={classes.form} onSubmit={handleSubmit}>
             <h2 className={classes.signup}>Sign up</h2>
             <input
-            ref={inputRef}
-              type="text"
+              className={classes.input}
+              ref={inputRef}
+              type="email"
               name="email"
               value={email}
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
+              className={classes.input}
               type="password"
               name="password"
               value={password}
@@ -54,6 +56,7 @@ return (
               onChange={(e) => setPassword(e.target.value)}
             />
             <input
+              className={classes.input}
               type="password"
               name="password2"
               value={password2}
@@ -62,7 +65,7 @@ return (
               onChange={(e) => setPassword2(e.target.value)}
             />
             {error && <p className={classes.error}>{error}</p>}
-            <Button type="submit" label={"Register"}/>
+            <Button type="submit" label={"Register"} />
             <p className={classes.alreadyHave}>
               Already have an account? <Link to="/login">Login</Link>
             </p>
@@ -70,12 +73,11 @@ return (
         </div>
         <div className={classes.imgform}>
           <div className={classes.displayflex}>
-            <img src="/flash.webp" alt=""/>
+            <img src="/flash.webp" alt="" />
           </div>
         </div>
       </div>
     </div>
   );
-
-}
-export default Register
+};
+export default Register;
