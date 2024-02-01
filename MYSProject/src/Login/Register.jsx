@@ -15,9 +15,8 @@ const inputRef=useRef(null)
 const handleSubmit=(e)=>{
     e.preventDefault()
     console.log(email)
-    if(email==="")newWrror.email="This is a required field"
     if(password !== password2 && validationPassword(password)){
-        setError("Passwords do not match!")
+        setError("Passwords do not match!")    
     }
 }
 
@@ -36,11 +35,12 @@ return (
             <h2 className={classes.signup}>Sign up</h2>
             <input
             ref={inputRef}
-              type="text"
+              type="email"
               name="email"
               value={email}
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <input
               type="password"
@@ -61,7 +61,7 @@ return (
               placeholder="Re-Enter Password"
               onChange={(e) => setPassword2(e.target.value)}
             />
-            {error && <p className={classes.error}>{error}</p>}
+            {error && <p style={{color:'red', fontSize: 15, marginTop: -30, marginBottom: -10}}>{error}</p>}
             <Button type="submit" label={"Register"}/>
             <p className={classes.alreadyHave}>
               Already have an account? <Link to="/login">Login</Link>

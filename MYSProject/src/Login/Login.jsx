@@ -12,8 +12,8 @@ const Login = () => {
     e.preventDefault();
     console.log(email);
     const newWrror={}
-    if(email==="")newWrror.email="This is a required field"
-    if(password==="")newWrror.password="This is a required field"
+    if(email==="")newWrror.email=" "
+    if(password==="")newWrror.password=""
     // try {
     //   const response = await fetch("http://localhost:3000/Login", {
     //     method: 'POST',  // Aggiunto il metodo POST
@@ -55,22 +55,18 @@ const Login = () => {
             <h2 className={classes.signin}>Sign in</h2>
             <input
             ref={inputRef}
-              type="text"
+              type="email"
               name="email"
               value={email}
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
               style={{borderColor:error.email?"red":""}}/>
-              {error.email&&<p style={{color:"red",fontSize:"20px"}}>{error.email}</p>}
             <input
               type="password"
               name="password"
               value={password}
-              required
               placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-              style={{borderColor:error.password?"red":""}}/>
-              {error.password&&<p style={{color:"red"}}>{error.password}</p>}
+              onChange={(e) => setPassword(e.target.value)} />
             <Button type="submit" label={"Log in"}/>
             <p className={classes.donthave}>
               Don't have an account? <Link to="/register">Register</Link>
