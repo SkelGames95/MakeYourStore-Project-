@@ -62,7 +62,7 @@
     width: 70%;
 }
 
-input{
+.input{
     background-color:transparent;
     height:65px;
     border-top: 0;
@@ -74,7 +74,7 @@ input{
     color: whitesmoke;
 
 }
-input::placeholder{
+.input::placeholder{
     color: whitesmoke;
     font-size: 20px;
 }

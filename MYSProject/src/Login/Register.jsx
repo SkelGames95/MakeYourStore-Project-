@@ -33,7 +33,7 @@ return (
         <div className={classes.register}>
           <form className={classes.form} onSubmit={handleSubmit}>
             <h2 className={classes.signup}>Sign up</h2>
-            <input
+            <input className={classes.input}
             ref={inputRef}
               type="email"
               name="email"
@@ -42,7 +42,7 @@ return (
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <input
+            <input className={classes.input}
               type="password"
               name="password"
               value={password}
@@ -53,7 +53,7 @@ return (
               title="The password must be at least 8 characters long and have an initial capital letter"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <input
+            <input className={classes.input}
               type="password"
               name="password2"
               value={password2}

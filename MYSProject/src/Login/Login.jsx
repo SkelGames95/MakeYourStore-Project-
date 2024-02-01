@@ -52,7 +52,7 @@ const Login = () => {
         <div className={classes.login}>
           <form className={classes.form} onSubmit={handleSubmit}>
             <h2 className={classes.signin}>Sign in</h2>
-            <input
+            <input className={classes.input}
             ref={inputRef}
               type="email"
               name="email"
@@ -60,7 +60,7 @@ const Login = () => {
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
               style={{borderColor:error.email?"red":""}}/>
-            <input
+            <input className={classes.input}
               type="password"
               name="password"
               value={password}
