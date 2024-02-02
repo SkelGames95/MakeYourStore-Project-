@@ -20,15 +20,11 @@ export const Footer = () => {
               <div className={classes.kickP}>
                 <p>
                   Join us on
-                  <span className={classes.mediaNone}>KickStarter</span>
-                </p>
-              </div>
-              <div className={classes.kickButton2}>
-                <img src="arrow.png" alt="Arrow" className={classes.arrow} />
+                </p> 
                 <a href="#" className={classes.kickIcon}>
                   <img
-                    src="pngegg.png"
-                    alt="Kickstarter"
+                    src="Kickstarter-Logo.png"
+                    alt="Kickstarter Logo"
                     className={classes.kickIconImg}
                   />
                 </a>
@@ -38,29 +34,29 @@ export const Footer = () => {
           <div className={classes.container2}>
             <div className={`${classes.footerLogoContainer} ${classes.WH}`}>
               <div className={classes.footerLogo}>
-                <a href="">
+                <a href="#">
                   <img src="MYS-Logo.jpg" alt="" width="120px" height="50px" />
                   </a>
-                  <a href="" className={classes.strong}>Make Your Story</a>
+                  <a href="#" className={classes.strong}>Make Your Story</a>
               </div>
             </div>
             <div className={`${classes.links} ${classes.WH}`}>
               <h3 className={classes.h3}>Customer</h3>
-              <a href="">Buyer</a>
-              <a href="">Supplier</a>
+              <a href="#">Buyer</a>
+              <a href="#">Supplier</a>
             </div>
             <div className={`${classes.links} ${classes.WH}`}>
               <h3 className={classes.h3}>Company</h3>
-              <a href="">About us</a>
-              <a href="">Credits</a>
-              <a href="">Contact us</a>
+              <a href="#">About us</a>
+              <a href="#">Credits</a>
+              <a href="#">Contact us</a>
             </div>
             <div
               className={`${classes.WH} ${classes.links2} ${classes.moreInfo}`}
             >
               <h3 className={classes.h3}>More informations</h3>
-              <a href="">Terms & Conditions</a>
-              <a href="">Our policy</a>
+              <a href="#">Terms & Conditions</a>
+              <a href="#">Our policy</a>
             </div>
             <div className={`${classes.links} ${classes.WH}`}>
               <h3 className={classes.h3}>Follow us</h3>
