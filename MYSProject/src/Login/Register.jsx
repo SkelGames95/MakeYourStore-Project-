@@ -70,7 +70,7 @@ return (
         </div>
         <div className={classes.imgform}>
           <div className={classes.displayflex}>
-            <img src="/flash.webp" alt=""/>
+            <img src="/aven.jpg" alt=""/>
           </div>
         </div>
       </div>
