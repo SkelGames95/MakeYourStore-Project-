@@ -113,9 +113,11 @@
     margin-top: -50px;
 }
 
-@media screen and (max-width: 1030px) {
-
-}
+@media screen and (max-width: 1200px) {
+  .containerForm{
+    width: 80vw;
+  }
+  }
 
 @media screen and (max-width: 760px) {
     .register{
