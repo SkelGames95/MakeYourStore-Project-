@@ -45,7 +45,7 @@ return (
             <input className={classes.input}
               type="password"
               name="password"
-              value={password}
+              value={password.length>0?"•".repeat(password.length) : ""}
               required
               minLength={8}
               placeholder="Password"
@@ -56,9 +56,10 @@ return (
             <input className={classes.input}
               type="password"
               name="password2"
-              value={password2}
+              value={password2.length>0?"•".repeat(password2.length) : ""}
               required
               placeholder="Re-Enter Password"
+              pattern="^(?=.*[A-Z])(?=.*[!@#$%^&*])(.{8,})$"
               onChange={(e) => setPassword2(e.target.value)}
             />
             {error && <p style={{color:'red', fontSize: 15, marginTop: -30, marginBottom: -10}}>{error}</p>}
