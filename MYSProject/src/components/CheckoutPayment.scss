@@ -1,0 +1,8 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+// per eliminare le freccet da input number
+#number-card::-webkit-inner-spin-button, 
+#exp::-webkit-inner-spin-button, 
+#cvv::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
