@@ -45,7 +45,7 @@ return (
             <input className={classes.input}
               type="password"
               name="password"
-              value={password.length>0?"•".repeat(password.length) : ""}
+              value={password}
               required
               minLength={8}
               placeholder="Password"
@@ -56,7 +56,7 @@ return (
             <input className={classes.input}
               type="password"
               name="password2"
-              value={password2.length>0?"•".repeat(password2.length) : ""}
+              value={password2}
               required
               placeholder="Re-Enter Password"
               pattern="^(?=.*[A-Z])(?=.*[!@#$%^&*])(.{8,})$"
