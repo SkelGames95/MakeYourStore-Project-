@@ -1,11 +1,12 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
-
+import { logIn } from "./controllers/users.mjs"
 const app = express();
 const port = 3000;
 
 app.use(express.json());
 
+app.post("/api/users/login", logIn);
 // const users = [];
 
 // app.get('/users', (req, res) => {
@@ -42,6 +43,6 @@ app.use(express.json());
 //    }
 // });
 
-// app.listen(port, () => {
-//    console.log(`Server is running on port ${port}`);
-// });
+ app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
