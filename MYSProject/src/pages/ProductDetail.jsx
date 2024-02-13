@@ -38,6 +38,10 @@ export function SingleSection({ }) {
         fetchsingleProduct("clothing", setClotes)
     }, [])
 
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      },[singleProduct.id])
+
     function addToCart() {
         const product = {
             id: singleProduct.id,

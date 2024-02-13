@@ -38,11 +38,10 @@ export function Carrello() {
                     </div>
                 </div>
             ))}
-            <div className="cart-total">
+            {cart && <div className="cart-total">
                 <p><span>Total</span>: {cartTotal}€</p>
                 <Button label="Checkout" />
-
-            </div>
+            </div>}
         </div>
     );
 };

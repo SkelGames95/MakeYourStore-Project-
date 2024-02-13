@@ -20,8 +20,13 @@ export function ShopSection() {
         fetchData("game", setGames)
         fetchData("figure", setFigures)
         fetchData("clothing", setClotes)
+        
 
     }, [])
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      },[])
 
     return (
         <div className="container-el">
