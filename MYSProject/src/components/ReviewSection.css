@@ -76,6 +76,12 @@
     font-family: CrimeFighter;
 }
 
+.average-rating{
+    font-size: 30px;
+}
+.average-rating span{
+color: orange;}
+
 @media screen and (max-width: 768px) {
     .review {
         text-align: center;

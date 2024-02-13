@@ -12,6 +12,8 @@ export function ReviSection({ productId }) {
   })
 
   const [review, setReview] = useState([])
+  const [averageRating, setAverageRating] = useState(0);
+
   function handleChange(event) {
     const { name, type, value, checked } = event.target;
     setInput({
@@ -24,10 +26,20 @@ export function ReviSection({ productId }) {
   const localStorageKey = `review_${productId}`;
 
   useEffect(() => {
-    // Carica le recensioni dal localStorage quando il componente viene montato
     const savedReview = JSON.parse(localStorage.getItem(localStorageKey)) || [];
     setReview(savedReview);
   }, [productId, localStorageKey]);
+
+
+  useEffect(() => {
+    if (review.length > 0) {
+      const totalRating = review.reduce((acc, cur) => acc + Number(cur.rating), 0);
+      const avgRating = totalRating / review.length;
+      setAverageRating(avgRating);
+    } else {
+      setAverageRating(0);
+    }
+  }, [review]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -36,26 +48,15 @@ export function ReviSection({ productId }) {
       description: input.description,
       rating: input.rating
     };
-    // Aggiungi la nuova recensione al localStorage
     const updatedReview = [...review, newReview];
     localStorage.setItem(localStorageKey, JSON.stringify(updatedReview));
-    // Aggiorna lo stato delle recensioni
     setReview(updatedReview);
-    // Resetta il campo di input per la nuova recensione
     setInput({
       username: "",
       description: "",
       rating: ""
     });
   }
-
-  useEffect(() => {
-    // Carica le recensioni dal localStorage quando il componente viene montato
-    const savedReviews = JSON.parse(localStorage.getItem(localStorageKey)) || [];
-    setReview(savedReviews);
-  }, [productId, localStorageKey]);
-
-
 
   function handleRatingChange(rating) {
     setInput({
@@ -66,6 +67,9 @@ export function ReviSection({ productId }) {
 
   return (
     <div className="review">
+      <div className="average-rating">
+        <p><span>Rating:</span> {averageRating.toFixed(1)}</p>
+      </div>
       <h1>Write your review!</h1>
       <form className="form-container" onSubmit={handleSubmit}>
         <input type="text" name="username" value={input.username} placeholder="Username" onChange={handleChange} />

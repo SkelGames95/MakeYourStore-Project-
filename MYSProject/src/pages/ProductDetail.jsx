@@ -36,7 +36,6 @@ export function SingleSection({ }) {
         fetchsingleProduct("game", setGames)
         fetchsingleProduct("figure", setFigures)
         fetchsingleProduct("clothing", setClotes)
-
     }, [])
 
     function addToCart() {
@@ -47,7 +46,7 @@ export function SingleSection({ }) {
             avatar: singleProduct.avatar,
             quantity: Number(input),
         }
-        console.log(product)
+        // console.log(product)
 
         let prevValue = localStorage.getItem("carrello")
         if (!prevValue) {
@@ -78,7 +77,6 @@ export function SingleSection({ }) {
                     <img src={singleProduct.avatar} alt="" />
                     <div className="rightside">
                         <h4>Description</h4>
-                        <h5>Rating: ora vediamo come si implementa </h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             Faucibus scelerisque eleifend donec pretium vulputate sapien.
@@ -87,7 +85,7 @@ export function SingleSection({ }) {
                             Mi quis hendrerit dolor magna eget est. Ut etiam sit amet nisl purus in mollis.
                             Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam.
                         </p>
-                        <h4 >Price:</h4><p className='price'>{singleProduct.price}</p>
+                        <h4 >Price:</h4><p className='price'>{singleProduct.price}€</p>
                         <div className="buttonInput">
                             <Button onClick={addToCart} label="Add to Cart" />
                             <label htmlFor="quantity" className="quantity">

@@ -13,15 +13,14 @@ export function Carrello() {
     }, [])
 
     function handleRemove(indexToRemove) {
-        // Creare una nuova versione dell'array del carrello escludendo il prodotto da rimuovere
         const updatedCart = cart.filter((_, index) => index !== indexToRemove);
-
-        // Aggiornare lo stato del carrello con la nuova versione
         setCart(updatedCart);
-
-        // Aggiornare anche localStorage per riflettere il cambiamento
         localStorage.setItem("carrello", JSON.stringify(updatedCart));
     }
+
+    const cartTotal = cart.reduce((total, product) => {
+        return total + (Number(product.price) * Number(product.quantity));
+    }, 0);
 
     return (
         <div className="carrello-container">
@@ -32,13 +31,18 @@ export function Carrello() {
                         <img src={product.avatar} alt="" />
                         <div className="productDetails">
                             <p><span>Product</span>: {product.title}</p>
-                            <p><span>Price</span>: {product.price}</p>
+                            <p><span>Price</span>: {product.price}€</p>
                             <p><span>Quantity </span>: {product.quantity}</p>
                         </div>
-                    <Button className="remove" label="Remove" onClick={() => handleRemove(index)}/>
+                        <Button className="remove" label="Remove" onClick={() => handleRemove(index)} />
                     </div>
                 </div>
             ))}
+            <div className="cart-total">
+                <p><span>Total</span>: {cartTotal}€</p>
+                <Button label="Checkout" />
+
+            </div>
         </div>
     );
 };

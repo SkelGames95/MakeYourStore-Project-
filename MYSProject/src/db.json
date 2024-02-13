@@ -3,37 +3,37 @@
         {
             "id": "1",
             "title": "Superman",
-            "price": "50€",
+            "price": "50",
             "avatar": "https://iconspng.com/uploads/superman-figure.png"
         },
         {
             "id": "2",
             "title": "Batman",
-            "price": "40€",
+            "price": "40",
             "avatar": "https://freepngimg.com/save/149158-batman-toy-superhero-free-transparent-image-hq/1600x1412"
         },
         {
             "id": "3",
             "title": "Goku",
-            "price": "70€",
+            "price": "70",
             "avatar": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84dc13b7-a2e7-4b45-83ec-311e72e82900/ddxcufk-93afd7b5-d517-4ad7-85c5-58e479d623a4.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg0ZGMxM2I3LWEyZTctNGI0NS04M2VjLTMxMWU3MmU4MjkwMFwvZGR4Y3Vmay05M2FmZDdiNS1kNTE3LTRhZDctODVjNS01OGU0NzlkNjIzYTQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.UBm5Lf8R5Tu-nQDvwKefytpUvkYquyBZOS8Pj5zzzHA"
         },
         {
             "id": "4",
             "title": "Naruto",
-            "price": "60€",
+            "price": "60",
             "avatar": "https://cmsapi-frontend.naruto-official.com/site/api/naruto/Image/get?path=/naruto/jp/news/2022/12/14/hPSDfg4IcQmEh6rz/004.png"
         },
         {
             "id": "5",
             "title": "Luffy",
-            "price": "100€",
+            "price": "100",
             "avatar": "https://ongpng.com/wp-content/uploads/2023/07/luffy-jumping-1.png"
         },
         {
             "id": "6",
             "title": "Zoro",
-            "price": "20€",
+            "price": "20",
             "avatar": "https://www.pngall.com/wp-content/uploads/14/Zoro-PNG-Photo.png"
         }
     ],
@@ -41,31 +41,31 @@
         {
             "id": "7",
             "title": "Red T-shirt",
-            "price": "30€",
+            "price": "30",
             "avatar": "https://i.pinimg.com/originals/bd/ef/cb/bdefcbc72735f64db17f3250b1e64245.png"
         },
         {
             "id": "8",
             "title": "White T-shirt",
-            "price": "30€",
+            "price": "30",
             "avatar": "https://purepng.com/public/uploads/large/white-tshirt-n0j.png"
         },
         {
             "id": "9",
             "title": "Black T-shirt",
-            "price": "35€",
+            "price": "35",
             "avatar": "https://5.imimg.com/data5/SELLER/Default/2020/11/UV/YZ/MM/30411976/black-tshirt-png.png"
         },
         {
             "id": "10",
             "title": "White Cap",
-            "price": "15€",
+            "price": "15",
             "avatar": "https://static.vecteezy.com/system/resources/previews/008/847/319/original/isolated-white-cap-front-view-free-png.png"
         },
         {
             "id": "11",
             "title": "Black Cap",
-            "price": "15€",
+            "price": "15",
             "avatar": "https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Hats-PNG/Black_Cap_PNG_Clipart.png?m=1563054376"
         }
     ],
@@ -73,19 +73,19 @@
         {
             "id": "12",
             "title": "Whole Game",
-            "price": "150€",
+            "price": "150",
             "avatar": "https://franklinheights.org/wp-content/uploads/2019/09/board-games-png-4-transparent.png"
         },
         {
             "id": "13",
             "title": "Copertine personalizzabili",
-            "price": "50€",
+            "price": "50",
             "avatar": "https://ultrapro.com/cdn/shop/products/15912_GradedCardSlv_PSA_Flat_800x.png?v=1669162805"
         },
         {
             "id": "14",
             "title": "Dadi personalizzabili",
-            "price": "20€",
+            "price": "20",
             "avatar": "https://static.vecteezy.com/system/resources/previews/020/575/874/original/3d-icon-illustration-floating-dice-png.png"
         }
     ]
