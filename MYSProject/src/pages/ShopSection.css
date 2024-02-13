@@ -93,4 +93,7 @@ font-family: CrimeFighter;
 .sliderContainer{
     text-align: center;
 }
+.intestazione h3 {
+    font-size: 20px;
+    }
 }

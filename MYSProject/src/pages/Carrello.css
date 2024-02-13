@@ -1,3 +1,13 @@
+@font-face {
+    font-family: CrimeFighter;
+    src: url(../Font/CRIMFBRG.TTF);
+}
+
+@font-face {
+    font-family: LuckiestGuy;
+    src: url(../Font/LuckiestGuy-Regular.TTF);
+}
+
 .carrello-container {
     width: 100%;
     height: 100%;
@@ -5,57 +15,90 @@
     display: flex;
     flex-direction: column;
     /* text-align: center; */
-    font-family: fantasy;
+    font-family: LuckiestGuy;
 }
 
 .carrello-container h2 {
     margin-top: 2rem;
     color: orange;
     font-size: 50px;
+    margin-left: 2rem;
 }
 
 .cart {
-    text-align: center;
+    /* text-align: center; */
 }
 
 .product-container {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
-    align-items: center;
+    /* align-items: center; */
+    padding-left: 2rem;
     margin-top: 1rem;
     color: white;
+    border-bottom: 1px solid orange;
+    /* height: 200px; */
+    flex-wrap: wrap;
+
 }
 
 .productDetails {
-    position: relative;
+    /* position: absolute; */
+    left: 800px;
+}
+
+.productDetails p {
+    font-family: CrimeFighter;
+    font-size: 25px;
+}
+
+.productDetails span {
+    font-family: LuckiestGuy;
+    font-size: 30px;
+    color: orange;
 }
 
 .product-container img {
-    height: 300px;
-    object-fit:cover;
+    width: 150px;
+    object-fit: cover;
+    max-height: 200px;
 }
+
 .product-container h4 {
-margin: 1rem;
+    margin: 1rem;
 }
 
 .imageDetails {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.rimuovi {
-    color: black;
-    padding: .5rem;
-    background-color: rgb(255, 213, 0);
-    font-weight: bold;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    position: relative;
+.imageDetails img {
+    display: flex;
+    gap: 1rem;
 }
 
-.rimuovi:hover {
-    transform: scale(110%);
-    transition: 0.2s;
+.remove {
+    height: 50px;
+    position: absolute;
+    align-self: flex-end;
+    left: 500px;
+    margin-bottom: 1rem;
+    /* position: relative; */
+    /* top: 110px; */
+}
+
+@media screen and (max-width: 630px) {
+    .remove {
+        position: static;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cart {
+        text-align: center;
+    }
 }

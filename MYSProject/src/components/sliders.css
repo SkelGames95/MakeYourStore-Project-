@@ -9,9 +9,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    /* margin-top: 1rem; */
     padding: 1rem;
-    /* background-color: rgba(255, 0, 0, 0.076); */
 }
 
 .Link:hover {
@@ -67,9 +65,19 @@
     }
     .singleCard{
         width: 100px;
+        padding-left: 3rem;
+        align-items: center;
+        justify-content: center;
     }
     .singleCard h2{
         width: 100px;
+    }
+    .cardContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 1rem;
     }
 
 }

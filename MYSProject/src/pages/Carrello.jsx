@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import "./Carrello.css"
+import { Button } from '../components/Button';
 
 export function Carrello() {
 
@@ -28,14 +29,14 @@ export function Carrello() {
             {cart && cart.map((product, index) => (
                 <div className="product-container">
                     <div className="imageDetails">
-                        <img src={product.avatar} alt="" width={200} />
+                        <img src={product.avatar} alt="" />
                         <div className="productDetails">
-                            <h4>Product: {product.title}</h4>
-                            <h4>Price: {product.price}</h4>
-                            <h4>Quantity: {product.quantity}</h4>
+                            <p><span>Product</span>: {product.title}</p>
+                            <p><span>Price</span>: {product.price}</p>
+                            <p><span>Quantity </span>: {product.quantity}</p>
                         </div>
+                    <Button className="remove" label="Remove" onClick={() => handleRemove(index)}/>
                     </div>
-                    <button className='rimuovi' onClick={() => handleRemove(index)}>Rimuovi</button>
                 </div>
             ))}
         </div>

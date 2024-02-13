@@ -134,5 +134,13 @@
     .buttonInput label {
         margin-top: 1rem;
     }
+    .rightside p {
+        font-size: 15px;
+    }
 
+}
+@media screen and (max-width: 600px) {
+    .rightside p {
+        font-size: 10px;
+    }
 }
