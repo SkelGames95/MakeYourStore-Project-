@@ -1,6 +1,7 @@
 import * as dotenv from "dotenv"; //AUTENTICAZIONE UTENTE
 import passport from "passport";
 import passportJWT from "passport-jwt";
+import { db } from "./db.mjs";
 dotenv.config();
 
 const { SECRET } = process.env;
@@ -22,3 +23,4 @@ passport.use(
     }
   )
 );
+

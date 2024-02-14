@@ -1,6 +1,8 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
-import { logIn, signUp } from "./controllers/users.mjs"
+import { logIn, signUp,logOut } from "./controllers/users.mjs"
+import authorize from './authorize.mjs';
+import "./passport.mjs"
 const app = express();
 const port = 3000;
 
@@ -8,6 +10,7 @@ app.use(express.json());
 
 app.post("/api/users/login", logIn);
 app.post("/api/users/signup",signUp)
+app.get("/api/users/logout",authorize, logOut);
 // const users = [];
 
 // app.get('/users', (req, res) => {
