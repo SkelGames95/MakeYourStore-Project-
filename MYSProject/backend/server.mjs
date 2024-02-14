@@ -1,12 +1,13 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
-import { logIn } from "./controllers/users.mjs"
+import { logIn, signUp } from "./controllers/users.mjs"
 const app = express();
 const port = 3000;
 
 app.use(express.json());
 
 app.post("/api/users/login", logIn);
+app.post("/api/users/signup",signUp)
 // const users = [];
 
 // app.get('/users', (req, res) => {
