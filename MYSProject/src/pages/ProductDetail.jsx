@@ -18,7 +18,10 @@ export function SingleSection({ }) {
         setsingleProduct(responseJson)
     }
 
-    useEffect(() => { fetchOnesingleProduct() }, [id])
+    useEffect(() => {
+        fetchOnesingleProduct()
+        window.scrollTo(0, 0)
+    }, [id])
 
     const [games, setGames] = useState([]);
     const [figures, setFigures] = useState([]);
