@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 .container{
     display: flex;
     flex-direction: column;
@@ -35,7 +34,7 @@
     width: 50%;
     background-color: rgb(0, 0, 0);
     color: orangered;
-    box-shadow: 
+    box-shadow:
     -10px -10px 20px rgba(103, 102, 102, 0.3), /* Primo livello di ombra */
     -20px -20px 40px rgba(93, 92, 92, 0.5); /* Secondo livello di ombra */
 }

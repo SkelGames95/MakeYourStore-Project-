@@ -10,10 +10,10 @@ export const Footer = () => {
               <div className={classes.kickP}>
                 <p>
                   Join us on
-                </p> 
+                </p>
                 <a href="#" className={classes.kickIcon}>
                   <img
-                    src="Kickstarter-Logo.png"
+                    src="./assets/images/Kickstarter-Logo.png"
                     alt="Kickstarter Logo"
                     className={classes.kickIconImg}
                   />
@@ -25,7 +25,7 @@ export const Footer = () => {
             <div className={`${classes.footerLogoContainer} ${classes.WH}`}>
               <div className={classes.footerLogo}>
                 <a href="#">
-                  <img src="MYS-Logo.jpg" alt="" width="120px" height="50px" />
+                  <img src="./assets/images/MYS-Logo.jpg" alt="" width="120px" height="50px" />
                   </a>
                   <a href="#" className={classes.strong}>Make Your Story</a>
               </div>
@@ -51,11 +51,11 @@ export const Footer = () => {
             <div className={`${classes.links} ${classes.WH}`}>
               <h3 className={classes.h3}>Follow us</h3>
               <div className={`${classes.icons} ${classes.WH}`}>
-                <img src="facebook.png" alt="f" width="30px" height="30px" />
-                <img src="facebook.png" alt="f" width="30px" height="30px" />
-                <img src="facebook.png" alt="f" width="30px" height="30px" />
-                <img src="facebook.png" alt="f" width="30px" height="30px" />
-                <img src="facebook.png" alt="f" width="30px" height="30px" />
+                <img src="./assets/images/facebook.png" alt="f" width="30px" height="30px" />
+                <img src="./assets/images/facebook.png" alt="f" width="30px" height="30px" />
+                <img src="./assets/images/facebook.png" alt="f" width="30px" height="30px" />
+                <img src="./assets/images/facebook.png" alt="f" width="30px" height="30px" />
+                <img src="./assets/images/facebook.png" alt="f" width="30px" height="30px" />
               </div>
             </div>
           </div>
