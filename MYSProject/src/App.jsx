@@ -1,8 +1,9 @@
-export const App = () => {
+import { Homepage } from "./Pages/Homepage";
 
-    return (
-        <div>
-            <p>creating repo</p>
-        </div>
-    )
-}
+export const App = () => {
+  return (
+    <div>
+      <Homepage />
+    </div>
+  );
+};
