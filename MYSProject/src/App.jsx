@@ -1,9 +1,11 @@
+import Login from "./Login/Login";
 import { Homepage } from "./Pages/Homepage";
 
 export const App = () => {
   return (
     <div>
-      <Homepage />
+      {/* <Homepage /> */}
+      <Login />
     </div>
   );
 };
