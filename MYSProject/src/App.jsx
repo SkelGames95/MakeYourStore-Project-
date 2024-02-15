@@ -1,9 +1,12 @@
-import { Homepage } from "./Pages/Homepage";
+import { Route, Routes } from "react-router-dom";
+import Login from "./Login/Login";
+import Register from "./Login/Register";
 
 export const App = () => {
   return (
-    <div>
-      <Homepage />
-    </div>
+   <Routes>
+    <Route path="/login" element={<Login/>} />
+    <Route path="/register"element={<Register/>}/>
+   </Routes>
   );
 };
