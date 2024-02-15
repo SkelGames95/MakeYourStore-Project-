@@ -14,31 +14,31 @@ const Login = () => {
     const newWrror={}
     if(email==="")newWrror.email=" "
     if(password==="")newWrror.password=""
-    // try {
-    //   const response = await fetch("http://localhost:3000/Login", {
-    //     method: 'POST',  //  metodo POST
-    //     headers: {
-    //       'Content-Type': 'application/json',  // tipo di contenuto
-    //     },
-    //     body: JSON.stringify({
-    //       email,
-    //       password
-    //     }),
-    //   });
+    try {
+      const response = await fetch("http://localhost:3000/Login", {
+        method: 'POST',  //  metodo POST
+        headers: {
+          'Content-Type': 'application/json',  // tipo di contenuto
+        },
+        body: JSON.stringify({
+          email,
+          password
+        }),
+      });
     
-    //   if (response.status === 200) {
-    //     const data = await response.json();
-    //     console.log(data);
-    //     localStorage.setItem("token", data.token);
-    //     localStorage.setItem("user", JSON.stringify(data.user));
-    //   } else {
-    //     console.log("Error in request. Status code:", response.status);
-    //     setError("Error!");
-    //   }
-    // } catch (error) {
-    //   console.error(error);
-    //   setError("An error occurred during the request.");
-    // }
+      if (response.status === 200) {
+        const data = await response.json();
+        console.log(data);
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+      } else {
+        console.log("Error in request. Status code:", response.status);
+        setError("Error!");
+      }
+    } catch (error) {
+      console.error(error);
+      setError("An error occurred during the request.");
+    }
 
     setError(newWrror)
 
