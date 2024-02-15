@@ -3,16 +3,6 @@ import classes from "./Footer.module.scss";
 export const Footer = () => {
   return (
     <div>
-      <div className={classes.bigContainer}>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt possimus
-          numquam dolorem fugit quibusdam quam saepe voluptas reprehenderit? Ea
-          esse, inventore commodi sed beatae doloremque, cupiditate magni
-          consectetur, delectus odit aperiam. Porro perferendis quibusdam nulla
-          molestias praesentium quia illum. Tenetur laborum consectetur harum
-          ipsam voluptas nihil mollitia sit aperiam repellendus?
-        </p>
-      </div>
       <footer>
         <div className={`${classes.container} ${classes.WH}`}>
           <div className={`${classes.bigButton} ${classes.WH}`}>
