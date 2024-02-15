@@ -1,14 +1,11 @@
-
-import { Route, Routes } from "react-router-dom";
 import Footer from "./Footer";
+import { Homepage } from "./Pages/Homepage";
 
 export const App = () => {
   return (
     <div>
-        <Routes>
-            <Route path="/" element={<Footer />} />
-        </Routes>
-
+      <Homepage />
+  <Footer />
     </div>
   );
 };
