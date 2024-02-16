@@ -16,8 +16,10 @@ app.post("/api/users/signup", signUp)
 app.get("/api/users/logout", authorize, logOut);
 
 app.get('/api/products', GetProducts);
-app.get('/api/products/category/:category', GetByCategory);
+app.get('/api/products/:category', GetByCategory);
 app.get('/api/products/:id', GetById)
+
+
 app.get('/api/products/reviews/:productId', GetReviewsByProductId);
 app.post('/api/products/reviews', AddReview);
 

@@ -40,7 +40,6 @@ const setupDb = async () => {
             product_id INT REFERENCES products(id),
             description TEXT,
             rating INT
-
             );
       
           -- Inserimento dei dati delle categorie
