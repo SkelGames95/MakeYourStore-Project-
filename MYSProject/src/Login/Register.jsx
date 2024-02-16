@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import classes from './Register.module.scss'
-import { Link } from "react-router-dom"
+import { useNavigate,Link } from "react-router-dom"
 import Login from "./Login"
 import Button from "../Button-LogReg/Button"
 
@@ -11,19 +11,54 @@ const [password,setPassword]=useState("")
 const [password2, setPassword2]=useState("")
 const [error,setError] = useState()
 const inputRef=useRef(null)
+const history = useNavigate(); // Ottieni l'istanza di history dal router
 
-const handleSubmit=(e)=>{
-    e.preventDefault()
-    console.log(email)
-    if(password !== password2 && validationPassword(password)){
-        setError("Passwords do not match!")    
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  console.log(email);
+
+  const newError = {};
+
+  if (password !== password2 && !validationPassword(password)) {
+    setError("Le password non corrispondono o non rispettano i requisiti!");
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:3000/api/users/signup", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+
+    console.log('Richiesta inviata:', JSON.stringify({
+      email,
+      password,
+    }));
+
+    if (response.status === 201) { 
+      const data = await response.json();
+      console.log('Risposta ricevuta:', data);
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+
+      history("/login");
+    } else {
+      console.log("Errore nella richiesta. Codice di stato:", response.status);
+      const errorData = await response.json();
+      console.log('Risposta di errore:', errorData);
+      setError();
     }
-}
-
-const validationPassword = (password) => {
-    const passwordTry = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(.{8,})$/;
-    return passwordTry.test(password)
-}
+  } catch (error) {
+    console.error(error);
+    setError("Si è verificato un errore durante la richiesta.");
+  }
+};
 useEffect(()=>{
   inputRef.current?.focus()
 },[])
@@ -71,7 +106,7 @@ return (
         </div>
         <div className={classes.imgform}>
           <div className={classes.displayflex}>
-            <img src="/aven.jpg" alt=""/>
+            <img src="/images/phanter.jpg" alt=""/>
           </div>
         </div>
       </div>

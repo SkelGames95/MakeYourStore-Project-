@@ -73,7 +73,7 @@ const Login = () => {
         </div>
         <div className={classes.imgform}>
           <div className={classes.displayflex}>
-            <img src="/spide.jpg"alt=""/>
+            <img src="./images/spide.jpg"alt=""/>
           </div>
         </div>
       </div>
