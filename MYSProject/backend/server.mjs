@@ -2,7 +2,9 @@ import express from 'express';
 import bcrypt from 'bcrypt';
 import { logIn, signUp,logOut } from "./controllers/users.mjs"
 import authorize from './authorize.mjs';
+import {db,setupDb} from './db.mjs'
 import "./passport.mjs"
+setupDb()
 const app = express();
 const port = 3000;
 

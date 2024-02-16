@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 dotenv.config();
 
 const logIn = async (req, res) => {
+  console.log(req)
   const { email, password } = req.body;
 
   const user = await db.one("SELECT * FROM users WHERE email=$1", email);
