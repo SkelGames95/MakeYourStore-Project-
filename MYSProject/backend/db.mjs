@@ -3,9 +3,10 @@ import pgPromise from "pg-promise";
 const db = pgPromise()("postgres://postgres:postgres@localhost:5432/postgres");
 
 const setupDb = async () => {
-        await db.none(`
+    await db.none(`
           -- Creazione della tabella users
           DROP TABLE IF EXISTS users;
+
           CREATE TABLE users (
               id SERIAL NOT NULL PRIMARY KEY,
               email TEXT NOT NULL,
@@ -13,15 +14,15 @@ const setupDb = async () => {
               token TEXT
           );
       
-          -- Creazione della tabella categories
-          DROP TABLE IF EXISTS categories;
+          -- Creazione della tabella categories        
+        DROP TABLE IF EXISTS categories CASCADE;
           CREATE TABLE categories (
               id SERIAL PRIMARY KEY,
               name TEXT
           );
       
           -- Creazione della tabella products
-          DROP TABLE IF EXISTS products;
+          DROP TABLE IF EXISTS products CASCADE;
           CREATE TABLE products (
               id SERIAL PRIMARY KEY,
               name TEXT NOT NULL,
@@ -48,12 +49,12 @@ const setupDb = async () => {
               ('Dice', 'Description for Dice', 'dice_image.jpg', 4.99, 2)
           ;
         `);
-      
 
-  const email = 'develhope@example.com';
-  const password = 'develhope';
 
-  await db.none('INSERT INTO users (email, password) VALUES ($1, $2)', [email, password]);
+    const email = 'develhope@example.com';
+    const password = 'develhope';
+
+    await db.none('INSERT INTO users (email, password) VALUES ($1, $2)', [email, password]);
 };
 
 setupDb();

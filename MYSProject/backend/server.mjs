@@ -12,6 +12,7 @@ app.use(express.json());
 app.post("/api/users/login", logIn);
 app.post("/api/users/signup", signUp)
 app.get("/api/users/logout", authorize, logOut);
+
 // Definisci una route per ottenere tutti i prodotti
 app.get('/api/products', async (req, res) => {
     try {
@@ -25,6 +26,23 @@ app.get('/api/products', async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
+
+// Definizione della route per ottenere tutti i prodotti di una categoria specifica
+app.get('/api/products/category/:category', async (req, res) => {
+    const category = req.params.category;
+    try {
+        // Recupera tutti i prodotti della categoria specificata dal database
+        const products = await db.any('SELECT * FROM products WHERE category_id = (SELECT id FROM categories WHERE name = $1)', [category]);
+        // Invia la risposta con i prodotti
+        res.json(products);
+    } catch (error) {
+        // Gestisci gli errori e invia una risposta di errore
+        console.error('Error fetching products by category:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+
 // const users = [];
 
 // app.get('/users', (req, res) => {
@@ -63,19 +81,4 @@ app.get('/api/products', async (req, res) => {
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
-});
-
-// Definizione della route per ottenere tutti i prodotti di una categoria specifica
-app.get('/api/products/:category', async (req, res) => {
-    const category = req.params.category;
-    try {
-        // Recupera tutti i prodotti della categoria specificata dal database
-        const products = await db.any('SELECT * FROM products WHERE category_id = (SELECT id FROM categories WHERE name = $1)', [category]);
-        // Invia la risposta con i prodotti
-        res.json(products);
-    } catch (error) {
-        // Gestisci gli errori e invia una risposta di errore
-        console.error('Error fetching products by category:', error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
 });
