@@ -6,12 +6,13 @@ const setupDb = async () => {
   console.log("Starting")
   await db.none(`
     
+  DROP TABLE IF EXISTS users;
 
-       CREATE TABLE IF NOT EXISTS users (
-        id SERIAL NOT NULL PRIMARY KEY,
-        email TEXT NOT NULL,
-        password TEXT NOT NULL,
-        token TEXT
+  CREATE TABLE users (
+      id SERIAL NOT NULL PRIMARY KEY,
+      email TEXT NOT NULL,
+      password TEXT NOT NULL,
+      token TEXT
     );
     `);
 
