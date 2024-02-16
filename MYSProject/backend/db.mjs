@@ -5,7 +5,7 @@ const db = pgPromise()("postgres://postgres:postgres@localhost:5432/postgres");
 const setupDb = async () => {
     await db.none(`
           -- Creazione della tabella users
-          DROP TABLE IF EXISTS users;
+          DROP TABLE IF EXISTS users CASCADE;
 
           CREATE TABLE users (
               id SERIAL NOT NULL PRIMARY KEY,
@@ -31,6 +31,17 @@ const setupDb = async () => {
               price NUMERIC NOT NULL,
               category_id INT REFERENCES categories(id)
           );
+
+          --Creazione della tabella reviews
+          DROP TABLE IF EXISTS reviews CASCADE;
+          CREATE TABLE reviews (
+            id SERIAL PRIMARY KEY,
+            user_id INT REFERENCES users(id),
+            product_id INT REFERENCES products(id),
+            description TEXT,
+            rating INT
+
+            );
       
           -- Inserimento dei dati delle categorie
           INSERT INTO categories (name) VALUES 
@@ -46,8 +57,7 @@ const setupDb = async () => {
               ('Poster', 'Description for Poster', 'poster_image.jpg', 14.99, 2),
               ('Mat', 'Description for Mat', 'mat_image.jpg', 24.99, 2),
               ('Artbook', 'Description for Artbook', 'artbook_image.jpg', 39.99, 2),
-              ('Dice', 'Description for Dice', 'dice_image.jpg', 4.99, 2)
-          ;
+              ('Dice', 'Description for Dice', 'dice_image.jpg', 4.99, 2);
         `);
 
 
