@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.Link:hover {
+    text-decoration: none;
+}
+
+.singleCard {
+    margin-top: 2rem;
+    padding-left: 6rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    object-fit: contain;
+    align-items: center;
+    justify-content: center;
+}
+
+.singleCard img:hover{
+    transform: scale(110%);
+    transition: 0.5s;
+}
+
+
+.singleCard h2 {
+    margin-top: .5rem;
+    font-size: 1rem;
+    width: 50%;
+    color: orange;
+}
+
+.scopri {
+    color: black;
+    padding: .5rem;
+    background-color:rgb(255, 213, 0);
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.slick-dots li button:before {
+    display: none;
+}
+
+
+@media screen and (max-width: 600px) {
+    .cardContainer img {
+        gap: 1rem;
+        max-height: 150px;
+        /* max-width: 100px; */
+        object-fit: contain;
+    }
+    .singleCard{
+        width: 100px;
+        padding-left: 3rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .singleCard h2{
+        width: 100px;
+    }
+    .cardContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 1rem;
+    }
+
+}
