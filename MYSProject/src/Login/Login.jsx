@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom"
 import classes from "./Login.module.scss";
 import { useEffect, useRef, useState } from "react";
 import Button from "../Button-LogReg/Button";
@@ -7,6 +7,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const[error,setError]=useState({})
   const inputRef=useRef(null)
+  const history = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +31,8 @@ const Login = () => {
         console.log(data);
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(data.user));
+
+        history("/");
       } else {
         console.log("Error in request. Status code:", response.status);
         setError("Error!");
@@ -73,7 +76,7 @@ const Login = () => {
         </div>
         <div className={classes.imgform}>
           <div className={classes.displayflex}>
-            <img src="/spide.jpg"alt=""/>
+            <img src="./images/spide.jpg"alt=""/>
           </div>
         </div>
       </div>
