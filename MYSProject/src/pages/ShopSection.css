@@ -11,7 +11,7 @@
 
 @font-face {
     font-family: LuckiestGuy;
-    src: url(../Font/LuckiestGuy-Regular.TTF);
+    src: url(../Font/LuckiestGuy-Regular);
 }
 
 .container-el {
@@ -45,6 +45,7 @@
 .intestazione h1 {
     color: orange;
     font-size: 70px;
+    font-family: LuckiestGuy;
 }
 
 .intestazione h3 {

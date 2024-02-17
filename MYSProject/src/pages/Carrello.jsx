@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import "./Carrello.css"
-import { Button } from '../components/Button';
+import { Button } from '../Components/Button';
 
 export function Carrello() {
 

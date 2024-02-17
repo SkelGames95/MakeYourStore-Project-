@@ -5,7 +5,7 @@ dotenv.config();
 const GetReviewsByProductId = async (req, res) => {
     const productId = req.params.productId;
     try {
-        const reviews = await db.any('SELECT * FROM reviews WHERE product_id = $1', productId);
+        const reviews = await db.any('SELECT * FROM reviews WHERE product_id = $1', Number(productId));
         res.json(reviews);
     } catch (error) {
         console.error('Error fetching reviews for product:', error);

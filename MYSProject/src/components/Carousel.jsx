@@ -37,8 +37,8 @@ export function Carousel({ items, category }) {
       <Slider {...settings}>
         {items.map((el, index) => (
           <div className='singleCard' key={index}>
-            <img src={el.avatar} alt="" height={200} />
-            <h2>{el.title}</h2>
+            <img src={el.image} alt="" height={200} />
+            <h2>{el.name}</h2>
             <Link className='Link' to={`/shop/${el.id}?category=${category}`}>
               <Button label="Scopri di più" />
               {/* <button className="scopri">Scopri di più</button> */}

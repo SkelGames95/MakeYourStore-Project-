@@ -1,9 +1,9 @@
 import { useParams, useLocation } from 'react-router-dom'
 import './ProductDetails.css'
 import { useEffect, useState } from 'react'
-import { Carousel } from '../components/Carousel'
-import { ReviSection } from '../components/ReviewSection'
-import { Button } from '../components/Button'
+import { Carousel } from '../Components/Carousel'
+import { ReviSection } from '../Components/ReviewSection'
+import { Button } from '../Components/Button'
 
 export function SingleSection({ }) {
     const [singleProduct, setsingleProduct] = useState({})
@@ -13,7 +13,7 @@ export function SingleSection({ }) {
     const category = queryParams.get("category");
 
     async function fetchOnesingleProduct() {
-        const response = await fetch(`http://localhost:3000/${category}/${id}`)
+        const response = await fetch(`http://localhost:3000/api/products/${id}`)
         const responseJson = await response.json()
         setsingleProduct(responseJson)
     }
@@ -29,16 +29,18 @@ export function SingleSection({ }) {
     const [carrello, setCarrello] = useState([]);
     const [input, setInput] = useState(1)
 
-    async function fetchsingleProduct(category, setter) {
-        const response = await fetch(`http://localhost:3000/${category}`)
+    const [gadgets, setGadgets] = useState([]);
+    const [MYS, setMYS] = useState([]);
+
+    async function fetchCategory(category, setter) {
+        const response = await fetch(`http://localhost:3000/api/products/category/${category}`)
         const responseJson = await response.json()
         setter(responseJson)
     }
 
     useEffect(() => {
-        fetchsingleProduct("game", setGames)
-        fetchsingleProduct("figure", setFigures)
-        fetchsingleProduct("clothing", setClotes)
+        fetchCategory("Gadgets", setGadgets)
+        fetchCategory("MYS", setMYS)
     }, [])
 
     function addToCart() {
@@ -77,16 +79,10 @@ export function SingleSection({ }) {
         <div className="container-elShop">
             <div className="cardsWrapper">
                 <div className="singleProduct">
-                    <img src={singleProduct.avatar} alt="" />
+                    <img src={singleProduct.image} alt="" />
                     <div className="rightside">
                         <h4>Description</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Faucibus scelerisque eleifend donec pretium vulputate sapien.
-                            Etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum.
-                            Amet massa vitae tortor condimentum lacinia quis vel eros donec.
-                            Mi quis hendrerit dolor magna eget est. Ut etiam sit amet nisl purus in mollis.
-                            Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam.
+                        <p>{singleProduct.description}
                         </p>
                         <h4 >Price:</h4><p className='price'>{singleProduct.price}€</p>
                         <div className="buttonInput">
@@ -107,7 +103,7 @@ export function SingleSection({ }) {
             <ReviSection productId={singleProduct.id} />
             <div className="sliderContainer">
                 <h2 className='potrebbe'>POTREBBE INTERESSARTI ANCHE</h2>
-                <Carousel items={figures} category="figure" />
+                <Carousel items={gadgets} category="Gadgets" />
             </div>
         </div>
     )

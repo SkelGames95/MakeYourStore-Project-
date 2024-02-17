@@ -5,6 +5,19 @@ import { StarRating } from "./StarRating";
 
 export function ReviSection({ productId }) {
 
+  const [savedReviews, setSavedReviews] = useState([]);
+
+  async function fetchReviews(productId) {
+    const response = await fetch(`http://localhost:3000/api/products/reviews/${productId}`)
+    const responseJson = await response.json()
+       setSavedReviews([responseJson])
+  }
+
+  useEffect(() => {
+    fetchReviews(productId)
+    console.log(savedReviews)
+  }, [productId])
+
   const [input, setInput] = useState({
     username: "",
     description: "",
@@ -22,6 +35,8 @@ export function ReviSection({ productId }) {
     }
     )
   }
+
+
 
   const localStorageKey = `review_${productId}`;
 
@@ -72,15 +87,20 @@ export function ReviSection({ productId }) {
       </div>
       <h1>Write your review!</h1>
       <form className="form-container" onSubmit={handleSubmit}>
-        <input type="text" name="username" value={input.username} placeholder="Username" onChange={handleChange} />
+        {/* <input type="text" name="username" value={input.username} placeholder="Username" onChange={handleChange} /> */}
         <textarea name="description" value={input.description} id="description" cols="20" rows="5" onChange={handleChange}></textarea>
         <StarRating onRatingChange={handleRatingChange} />
-        <Button label="Submit" type="submit" disabled={input.username === "" || input.rating === ""} />
+        <Button label="Submit" type="submit" disabled={input.rating === ""} />
+        {savedReviews && savedReviews.map((rev, index) => (
+          <div key={rev.id} className="newReview">
+            <p><span>Description:</span>{rev.description}</p>
+            <p><span>Rating:</span> {rev.rating}</p>
+          </div>
+        ))}
       </form>
       <ul className="newReview">
         {review && review.map((el, index) => (
           <li key={index} className="review-inner">
-            <p><span>User:</span> {el.username}</p>
             <p><span>Description:</span> {el.description}</p>
             <p><span>Rating:</span> {el.rating}</p>
           </li>
