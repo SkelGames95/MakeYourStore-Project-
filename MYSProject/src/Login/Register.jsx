@@ -5,7 +5,7 @@ import Login from "./Login"
 import Button from "../Button-LogReg/Button"
 
 const Register=(props)=>{
-// const [name,setName]=useState("")  
+// const [name,setName]=useState("")
 const [email,setEmail]=useState("")
 const [password,setPassword]=useState("")
 const [password2, setPassword2]=useState("")
@@ -41,7 +41,7 @@ const handleSubmit = async (e) => {
       password,
     }));
 
-    if (response.status === 201) { 
+    if (response.status === 201) {
       const data = await response.json();
       console.log('Risposta ricevuta:', data);
       localStorage.setItem("token", data.token);
