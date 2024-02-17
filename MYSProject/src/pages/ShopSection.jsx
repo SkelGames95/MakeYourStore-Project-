@@ -9,15 +9,15 @@ export function ShopSection() {
     const [gadgets, setGadgets] = useState([]);
     const [MYS, setMYS] = useState([]);
 
-    async function fetchData(category, setter) {
+    async function fetchCategory(category, setter) {
         const response = await fetch(`http://localhost:3000/api/products/category/${category}`)
         const responseJson = await response.json()
         setter(responseJson)
     }
 
     useEffect(() => {
-        fetchData("Gadgets", setGadgets)
-        fetchData("MYS", setMYS)
+        fetchCategory("Gadgets", setGadgets)
+        fetchCategory("MYS", setMYS)
     }, [])
 
     return (

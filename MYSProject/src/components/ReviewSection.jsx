@@ -6,26 +6,35 @@ import { StarRating } from "./StarRating";
 export function ReviSection({ productId }) {
 
   const [savedReviews, setSavedReviews] = useState([]);
+  const [review, setReview] = useState([])
+  const [averageRating, setAverageRating] = useState(0);
 
   async function fetchReviews(productId) {
-    const response = await fetch(`http://localhost:3000/api/products/reviews/${productId}`)
+    if (!productId) {
+      console.error('Product ID is undefined');
+      return;
+    }
+    console.log("productID:", productId);
+    const response = await fetch(`http://localhost:3000/api/products/reviews/${Number(productId)}`)
     const responseJson = await response.json()
-       setSavedReviews([responseJson])
+    setSavedReviews(responseJson)
   }
+  //Fetcha le reviews dal DB
 
   useEffect(() => {
-    fetchReviews(productId)
-    console.log(savedReviews)
+    if (productId !== undefined) {
+      fetchReviews(productId)
+      console.log(savedReviews)
+  }
   }, [productId])
+  //Al caricamenteo della pagina, richiama la funzione fetchReviews()
 
   const [input, setInput] = useState({
-    username: "",
     description: "",
     rating: ""
   })
+  //Gestisci gli input di una nuova recensione
 
-  const [review, setReview] = useState([])
-  const [averageRating, setAverageRating] = useState(0);
 
   function handleChange(event) {
     const { name, type, value, checked } = event.target;
@@ -36,14 +45,12 @@ export function ReviSection({ productId }) {
     )
   }
 
-
-
   const localStorageKey = `review_${productId}`;
-
   useEffect(() => {
     const savedReview = JSON.parse(localStorage.getItem(localStorageKey)) || [];
     setReview(savedReview);
   }, [productId, localStorageKey]);
+  //Al caricamento della pagina, carica le recensioni che ci sono nel localStorage
 
 
   useEffect(() => {
@@ -55,6 +62,7 @@ export function ReviSection({ productId }) {
       setAverageRating(0);
     }
   }, [review]);
+  //Calcolo dell'average rating (funziona solo in front-end)
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -87,15 +95,15 @@ export function ReviSection({ productId }) {
       </div>
       <h1>Write your review!</h1>
       <form className="form-container" onSubmit={handleSubmit}>
-        {/* <input type="text" name="username" value={input.username} placeholder="Username" onChange={handleChange} /> */}
         <textarea name="description" value={input.description} id="description" cols="20" rows="5" onChange={handleChange}></textarea>
         <StarRating onRatingChange={handleRatingChange} />
         <Button label="Submit" type="submit" disabled={input.rating === ""} />
-        {savedReviews && savedReviews.map((rev, index) => (
-          <div key={rev.id} className="newReview">
-            <p><span>Description:</span>{rev.description}</p>
-            <p><span>Rating:</span> {rev.rating}</p>
-          </div>
+        {savedReviews && savedReviews.map && savedReviews.map((rev, index) => (
+          <div className="newReview">
+            <div key={rev.id} className="review-inner">
+              <p><span>Description:</span>{rev.description}</p>
+              <p><span>Rating:</span> {rev.rating}</p>
+            </div></div>
         ))}
       </form>
       <ul className="newReview">
