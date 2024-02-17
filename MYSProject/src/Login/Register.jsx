@@ -45,7 +45,7 @@ const handleSubmit = async (e) => {
       const data = await response.json();
       console.log('Risposta ricevuta:', data);
       localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
+      localStorage.setItem("user", JSON.stringify(data.email));
 
       history("/login");
     } else {
