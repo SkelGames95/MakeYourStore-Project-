@@ -99,11 +99,11 @@ export function ReviSection({ productId }) {
         <StarRating onRatingChange={handleRatingChange} />
         <Button label="Submit" type="submit" disabled={input.rating === ""} />
         {savedReviews && savedReviews.map && savedReviews.map((rev, index) => (
-          <div className="newReview">
-            <div key={rev.id} className="review-inner">
+          <ul className="newReview">
+            <li key={rev.id} className="review-inner">
               <p><span>Description:</span>{rev.description}</p>
               <p><span>Rating:</span> {rev.rating}</p>
-            </div></div>
+            </li></ul>
         ))}
       </form>
       <ul className="newReview">
