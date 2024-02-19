@@ -1,9 +1,9 @@
 import { Hero } from "../Components/Hero";
 import { Searchbar } from "../Components/Searchbar";
 import { Welcome } from "../Components/Welcome";
-import { Nav } from "../Components/Nav";
 import "./Homepage.css";
 import Footer from "../Footer";
+import { Header } from "../Header";
 
 function onSearch(data) {
   console.log(data);
@@ -11,7 +11,7 @@ function onSearch(data) {
 export function Homepage() {
   return (
     <div>
-      <Nav />
+      <Header />
       <Hero />
       <Searchbar onSearch={onSearch} />
       <Welcome />

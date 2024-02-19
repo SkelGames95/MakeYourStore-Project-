@@ -1,56 +1,46 @@
-import { Link } from "react-router-dom";
-import "./layout.css"
-import userhero from "../images/userhero.png"
-import MYSTitle from "../images/MYSTitleSmall.png"
-import heart from "../images/heart.png"
-import cart from "../images/cart.png"
-import Xexit from "../images/X.png"
-import arrow from "../images/arrow.png"
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "./layout.css";
+import MYSTitle from "../images/MYSTitleSmall.png";
+import hamburgerIcon from "../images/menu-icon.svg";
+import closeIcon from "../images/X.png";
 
 export function Header() {
     const [isHidden, setIsHidden] = useState(false);
+    const [toggleIcon, setToggleIcon] = useState(hamburgerIcon); // Impostiamo l'icona iniziale
 
-    function handleExitClick() {
-        setIsHidden(true);
+    const navigate = useNavigate()
+    function handleHamburgerClick() {
+        setIsHidden(!isHidden); // Invertiamo lo stato del menù
+        // Cambiamo l'icona in base allo stato del menù
+        setToggleIcon(isHidden ? hamburgerIcon : closeIcon);
     }
 
-    function handleArrowClick() {
-        setIsHidden(false);
-    }
-        return (
-            <>
-                {!isHidden ? (
-                    <div className="header">
-                        <div className="icons-header">
-                            <img src={userhero} alt="Icona utente" id="icons1-header" />
-                            <img src={cart} alt="Icona carrello" className="cart-header" id="icons1-header" />
-                            <img src={heart} alt="Icona cuore" id="icons1-header" />
-                        </div>
-                        <div className="logo-MYS">
-                            <img src={MYSTitle} alt="logo del team" id="logo-MYS"/>
-                        </div>
-                        <div className="links-header">
-                            <div id="links-header">
-                                <Link to="/news" className="links-h">News</Link>
-                                <a href="" className="links-h">Shop</a>
-                                <a href="" className="links-h">Wikia</a>
-                                <Link to="/credits" className="links-h">Credits</Link>
-                            </div>
-                            <div className="hr-header">
-                                <hr id="hr-header"/>
-                            </div>
-                        </div>
-                        <div className="exit">
-                            <img src={Xexit} id="x-exit" onClick={handleExitClick} />
-                        </div>
-                    </div>
-                ) : (
-                    <div className="exit">
-                        <img src={arrow} id="arrow" onClick={handleArrowClick} />
-                    </div>
-                )}
-            </>
-        )
-    }
-    
+    return (
+        <nav className="navbar">
+            <div className="navbar-brand" onClick={() => {navigate('/')}}>
+                <img src={MYSTitle} alt="logo del team" className="navbar-logo"/>
+                <img src="../images/userhero.png" alt=""  className="photos"/>
+                <img src="../images/heart.png" alt="" className="photos"/>
+                <img src="../images/cart.png" alt="" className="photos"/>
+            </div>
+            <div className="navbar-toggle" onClick={handleHamburgerClick}>
+                <ul className={isHidden ? "navbar-menu hidden" : "navbar-menu active"}>
+                    <li className="navbar-item">
+                        <Link to="/news" className="navbar-link">News</Link>
+                    </li>
+                    <li className="navbar-item">
+                        <a href="/" className="navbar-link">Shop</a>
+                    </li>
+                    <li className="navbar-item">
+                        <a href="/" className="navbar-link">Wikia</a>
+                    </li>
+                    <li className="navbar-item">
+                        <Link to="/credits" className="navbar-link">Credits</Link>
+                    </li>
+                </ul>
+                <img src={toggleIcon} alt="Icona del menù" className={isHidden ? "navbar-hamburger-icon inverted" : "navbar-hamburger-icon"} />
+            </div>
+        </nav>
+    );
+}

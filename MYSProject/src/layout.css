@@ -1,229 +1,102 @@
+/* navbar.css */
 *{
-  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.header {
-  width: 100%;
-  height: 100%;
-  background: rgb(0, 0, 0);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.icons-header {
-  width: 18%;
-  height: 70%;
-  display: flex;
-  gap: 1em;
-}
-
-.logo-MYS {
-  width: 30%;
-  height: 100%;
+/* Stile per la navbar */
+.navbar {
   display: flex;
   align-items: center;
-}
-
-#logo-MYS {
-  height: 80%;
-}
-
-.links-header {
-  width: 45%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-}
-
-#links-header {
+  background-color: #181818;
+  color: #fff;
+  padding: 10px 40px;
   width: 100%;
-  height: 70%;
+  height: 10%;
+}
+
+/* Stile per il logo nella navbar */
+.navbar-logo {
+  width: 40%;
+}
+
+.photos{
+  width: 8%;
+}
+
+.navbar-brand{
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
+  cursor: pointer;
+  gap: 3rem;
+  width: 40%;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Stile per l'icona del menu hamburger nella navbar */
+.navbar-hamburger-icon {
+  cursor: pointer;
+  width: 30px;
+}
+
+/* Stile per nascondere il menu */
+.navbar-menu.hidden {
+  display: none;
+}
+
+/* Stile per il menu nella navbar */
+.navbar-menu {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
   justify-content: flex-end;
-  gap: 7em;
-}
-
-.links-h {
-  text-decoration: none;
-  color: white;
-  font-size: 25px;
-}
-
-#hr-header {
-  height: 5px;
-  background: white;
-}
-
-#icons1-header {
-  width: 25%;
-  height: 100%;
-}
-
-.content-news {
-  height: 120vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#news{
-  color: white;
-  font-size: 100px;
-}
-
-#p-news {
-  color: white;
+  margin-right: 10rem;
+  font-size: 34px;
+  border-bottom: 5px solid whitesmoke;
   text-align: center;
+  margin-top: 20px;
+  padding: 0 10px 10px 40px;
 }
 
-.content2-news {
-  width: 60%;
+/* Stile per gli elementi del menu nella navbar */
+.navbar-item {
+  margin-right: 20px;
+}
+
+/* Stile per i link nel menu della navbar */
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-link:hover {
+  text-decoration: none;
+  color: orange;
+}
+
+.navbar-hamburger-icon {
+  cursor: pointer;
+  width: 30px;
+  filter: invert(1);
+}
+
+/* Stile per l'icona del menu hamburger nella navbar con colori invertiti */
+.navbar-hamburger-icon.inverted {
+  filter: none;
+}
+
+.navbar-toggle{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 30px;
-}
-
-.links-news {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-}
-
-#x {
-  height: 50px;
-  width: 50px;
-}
-
-#ig {
-  height: 50px;
-  width: 50px;
-}
-
-#discover {
-  color: rgb(238, 146, 7);
-}
-
-.kickstarter {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-  width: 100%;
   height: 30%;
+  width: 40%;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
 }
 
-#kickstarter {
-  width: 300px;
-  height: 170px;
-  margin-top: 5px;
+@media (max-width: 1170px){
+  .photos{
+    width: 12%;
+  }
 }
 
-#join-us {
-  color: white;
-}
-
-.content-discover {
-  width: 90%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-#newsflash {
-  color: rgb(255, 255, 255);
-  font-size: 70px;
-}
-
-.card-discover {
-  width: 66%;
-  height: 28%;
-  background: rgba(255, 255, 255, 0.781);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 1.8em;
-}
-
-.img-discover {
-  width: 30%;
-  height: 90%;
-  background: blue;
-  border-radius: 20px;
-}
-
-.text-discover {
-  width: 60%;
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-}
-
-.update {
-  width: 100%;
-  height: 22%;
-  color: black;
-}
-
-#update {
-  font-size: 30px;
-  color: black;
-}
-
-#welcome {
-  font-size: 21px;
-  color: black;
-}
-
-#signUp-discover {
-  color: rgb(211, 241, 76);
-}
-
-.kickstarter-discover {
-  width: 100%;
-  height: 20%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-#kickstarter-discover {
-  width: 60%;
-  height: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-#kickstarter-logo-discover {
-  width: 300px;
-  height: 170px;
-}
-
-.cart-header {
-  margin-top: 10px;
-}
-
-.exit {
-  width: 10%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-header.changed {
-  background: rgba(0, 0, 0, 0);
-}
-
-#x-exit {
-  width: 20%;
-  height: 20%;
-}
 
