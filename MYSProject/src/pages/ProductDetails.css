@@ -46,7 +46,7 @@
 }
 
 .singleProduct img:hover {
-    scale: 120%;
+    scale: 105%;
     transition: 1s;
 }
 
