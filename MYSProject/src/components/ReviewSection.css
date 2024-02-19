@@ -70,17 +70,21 @@
 .review-inner span {
     color: orange;
     font-family: LuckiestGuy;
+    font-size: 24px;
 }
 
 .review-inner p {
     font-family: CrimeFighter;
+    font-size: 24px;
 }
 
-.average-rating{
+.average-rating {
     font-size: 30px;
 }
-.average-rating span{
-color: orange;}
+
+.average-rating span {
+    color: orange;
+}
 
 @media screen and (max-width: 768px) {
     .review {
@@ -92,10 +96,24 @@ color: orange;}
     }
 
     .review-inner p {
-        font-size: 15px;
+        font-size: 16px;
+    }
+
+    .review-inner span {
+        font-size: 20px;
+        display: block;
+    }
+
+    .review-inner {
+        flex-wrap: wrap;
     }
 
     .newReview {
         width: 100%;
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
+        padding: 0rem;
+        align-items: center;
     }
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import "./Carrello.css"
-import { Button } from '../components/Button';
+import { Button } from '../Components/Button';
 
 export function Carrello() {
 
@@ -18,19 +18,19 @@ export function Carrello() {
         localStorage.setItem("carrello", JSON.stringify(updatedCart));
     }
 
-    const cartTotal = cart.reduce((total, product) => {
+    const cartTotal = cart ? cart.reduce((total, product) => {
         return total + (Number(product.price) * Number(product.quantity));
-    }, 0);
+    }, 0) : 0;
 
     return (
         <div className="carrello-container">
-            <h2 className='cart'>Carrello</h2>
+            <h2 className='cart'>Your Cart</h2>
             {cart && cart.map((product, index) => (
                 <div className="product-container">
                     <div className="imageDetails">
-                        <img src={product.avatar} alt="" />
+                        <img src={product.image} alt=""/>
                         <div className="productDetails">
-                            <p><span>Product</span>: {product.title}</p>
+                            <p><span>Product</span>: {product.name}</p>
                             <p><span>Price</span>: {product.price}€</p>
                             <p><span>Quantity </span>: {product.quantity}</p>
                         </div>
@@ -38,8 +38,9 @@ export function Carrello() {
                     </div>
                 </div>
             ))}
-            {cart && <div className="cart-total">
-                <p><span>Total</span>: {cartTotal}€</p>
+            {cart && cart.length === 0 && <p className='alert'>Oops, your cart is empty!</p> }
+            {cart && cart.length > 0 && <div className="cart-total">
+                {cartTotal && <p><span>Total</span>: {cartTotal.toFixed(2)}€</p>}
                 <Button label="Checkout" />
             </div>}
         </div>

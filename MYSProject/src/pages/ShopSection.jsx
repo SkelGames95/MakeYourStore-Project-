@@ -1,27 +1,23 @@
 import { Link } from "react-router-dom";
 import './ShopSection.css'
 import { useEffect, useState } from "react";
-import { Carousel } from "../components/Carousel";
+import { Carousel } from "../Components/Carousel";
 
 
 
 export function ShopSection() {
-    const [games, setGames] = useState([]);
-    const [figures, setFigures] = useState([]);
-    const [clothes, setClotes] = useState([]);
+    const [gadgets, setGadgets] = useState([]);
+    const [MYS, setMYS] = useState([]);
 
-    async function fetchData(category, setter) {
-        const response = await fetch(`http://localhost:3000/${category}`)
+    async function fetchCategory(category, setter) {
+        const response = await fetch(`http://localhost:3000/api/products/category/${category}`)
         const responseJson = await response.json()
         setter(responseJson)
     }
 
     useEffect(() => {
-        fetchData("game", setGames)
-        fetchData("figure", setFigures)
-        fetchData("clothing", setClotes)
-        
-
+        fetchCategory("Gadgets", setGadgets)
+        fetchCategory("MYS", setMYS)
     }, [])
 
     useEffect(()=>{
@@ -39,12 +35,10 @@ export function ShopSection() {
                 </div>
             </div>
             <div className="sliderContainer">
-                <h1>GAMES</h1>
-                <Carousel items={games} category="game" />
-                <h1>FIGURES</h1>
-                <Carousel items={figures} category="figure" />
-                <h1>CLOTHING</h1>
-                <Carousel items={clothes} category="clothing" />
+                <h1 className="category">MAKE YOUR STORY</h1>
+                <Carousel items={MYS} category="MYS" />
+                <h1 className="category">GADGETS</h1>
+                <Carousel items={gadgets} category="Gadgets" />
             </div>
         </div>
 

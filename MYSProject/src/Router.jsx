@@ -8,9 +8,8 @@ export function Router() {
 
     return(
         <SWRConfig value={{fetcher}}>
-           <BrowserRouter>
              <App />
-           </BrowserRouter>
+        
         </SWRConfig>
     )
 }
