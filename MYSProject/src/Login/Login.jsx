@@ -43,7 +43,7 @@ const Login = () => {
         history("/");
       } else {
         console.log("Error in request. Status code:", response.status);
-        setError({ general: "Error!" });
+        setError({ general: "User does not exist" });
       }
     } catch (error) {
       console.error(error);
