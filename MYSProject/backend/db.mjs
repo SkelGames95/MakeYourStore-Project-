@@ -31,7 +31,9 @@ const setupDb = async () => {
               price NUMERIC NOT NULL,
               category_id INT REFERENCES categories(id)
           );
-
+=======
+  console.log("Starting")
+  await db.none(`
           --Creazione della tabella reviews
           DROP TABLE IF EXISTS reviews CASCADE;
           CREATE TABLE reviews (
@@ -59,7 +61,6 @@ const setupDb = async () => {
               ('Dice', 'Description for Dice', 'https://m.media-amazon.com/images/I/91RDcM4iJ+L._AC_UF1000,1000_QL80_.jpg', 4.99, 2);
         `);
 
-
     const email = 'develhope@example.com';
     const password = 'develhope';
 
@@ -68,4 +69,4 @@ const setupDb = async () => {
 
 setupDb();
 
-export { db }
+export { db,setupDb };
