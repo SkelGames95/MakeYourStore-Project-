@@ -1,5 +1,8 @@
 import express from 'express';
-import { logIn, signUp,logOut } from "./controllers/users.mjs"
+import bcrypt from 'bcrypt';
+import { logIn, signUp, logOut } from "./controllers/users.mjs"
+import { GetProducts, GetByCategory, GetById } from './controllers/products.mjs';
+import { GetReviewsByProductId, AddReview } from './controllers/reviews.mjs';
 import authorize from './authorize.mjs';
 import {db,setupDb} from './db.mjs'
 import cors from "cors"
@@ -14,12 +17,27 @@ const app = express();
 const port = 3000;
 app.use(cors())
 app.use(express.json());
- app.use(bodyParser.json());
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
+
 app.post("/api/users/login", logIn);
-app.post("/api/users/signup",signUp)
-app.get("/api/users/logout",authorize, logOut);
+app.post("/api/users/signup", signUp)
+app.get("/api/users/logout", authorize, logOut);
+
+app.get('/api/products', GetProducts);
+app.get('/api/products/category/:category', GetByCategory);
+app.get('/api/products/:id', GetById)
 
 
- app.listen(port, () => {
+app.get('/api/products/reviews/:productId', GetReviewsByProductId);
+app.post('/api/products/reviews', AddReview);
+
+app.use(bodyParser.json());
+
+app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
