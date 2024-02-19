@@ -13,7 +13,7 @@ export function SingleSection({ }) {
     const category = queryParams.get("category");
 
     async function fetchOnesingleProduct() {
-        const response = await fetch(`http://localhost:3000/api/products/${id}`)
+        const response = await fetch(`http://localhost:3000/api/products/${Number(id)}`)
         const responseJson = await response.json()
         setsingleProduct(responseJson)
     }

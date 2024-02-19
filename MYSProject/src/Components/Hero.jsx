@@ -1,6 +1,6 @@
 import "./Hero.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-italia/dist/css/bootstrap-italia.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap-italia/dist/css/bootstrap-italia.min.css";
 import { HomepageButton } from "./HomepageButton";
 export function Hero() {
   return (
