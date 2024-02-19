@@ -92,7 +92,7 @@ font-family: CrimeFighter;
 
 @media screen and (max-width: 768px) {
 .sliderContainer{
-    text-align: center;
+    /* text-align: center; */
 }
 .intestazione h3 {
     font-size: 20px;

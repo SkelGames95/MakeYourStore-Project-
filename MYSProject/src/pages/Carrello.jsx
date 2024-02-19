@@ -18,17 +18,17 @@ export function Carrello() {
         localStorage.setItem("carrello", JSON.stringify(updatedCart));
     }
 
-    const cartTotal = cart.reduce((total, product) => {
+    const cartTotal = cart ? cart.reduce((total, product) => {
         return total + (Number(product.price) * Number(product.quantity));
-    }, 0);
+    }, 0) : 0;
 
     return (
         <div className="carrello-container">
-            <h2 className='cart'>Carrello</h2>
+            <h2 className='cart'>Your Cart</h2>
             {cart && cart.map((product, index) => (
                 <div className="product-container">
                     <div className="imageDetails">
-                        <img src={product.image} alt="" />
+                        <img src={product.image} alt=""/>
                         <div className="productDetails">
                             <p><span>Product</span>: {product.name}</p>
                             <p><span>Price</span>: {product.price}€</p>
@@ -38,11 +38,11 @@ export function Carrello() {
                     </div>
                 </div>
             ))}
-            <div className="cart-total">
-                <p><span>Total</span>: {cartTotal.toFixed(2)}€</p>
+            {cart && cart.length === 0 && <p className='alert'>Oops, your cart is empty!</p> }
+            {cart && cart.length > 0 && <div className="cart-total">
+                {cartTotal && <p><span>Total</span>: {cartTotal.toFixed(2)}€</p>}
                 <Button label="Checkout" />
-
-            </div>
+            </div>}
         </div>
     );
 };

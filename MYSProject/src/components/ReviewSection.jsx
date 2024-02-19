@@ -54,15 +54,15 @@ export function ReviSection({ productId }) {
 
 
   useEffect(() => {
-    if (review.length > 0) {
-      const totalRating = review.reduce((acc, cur) => acc + Number(cur.rating), 0);
-      const avgRating = totalRating / review.length;
-      setAverageRating(avgRating);
+    if (savedReviews.length > 0) {
+        const totalRating = savedReviews.reduce((acc, cur) => acc + Number(cur.rating), 0);
+        const avgRating = totalRating / savedReviews.length;
+        setAverageRating(avgRating);
     } else {
-      setAverageRating(0);
+        setAverageRating(0);
     }
-  }, [review]);
-  //Calcolo dell'average rating (funziona solo in front-end)
+}, [savedReviews]);
+  //Calcolo dell'average rating (backend)
 
 
   async function addReview(productId, rating, description) {
@@ -89,7 +89,7 @@ export function ReviSection({ productId }) {
     };
 
     const updatedReview = [...review, newReview];
-    localStorage.setItem(localStorageKey, JSON.stringify(updatedReview));
+    // localStorage.setItem(localStorageKey, JSON.stringify(updatedReview));    
     setReview(updatedReview);
     setInput({
       description: "",

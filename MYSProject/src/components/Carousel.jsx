@@ -24,7 +24,7 @@ export function Carousel({ items, category }) {
         }
       },
       {
-        breakpoint: 600, // Schermo di dimensioni <= 600px (iPhone)
+        breakpoint: 650, // Schermo di dimensioni <= 600px (iPhone)
         settings: {
           slidesToShow: 1, // Mostra 1 componente per riga
         }
@@ -37,10 +37,10 @@ export function Carousel({ items, category }) {
       <Slider {...settings}>
         {items.map((el, index) => (
           <div className='singleCard' key={index}>
-            <img src={el.image} alt="" height={200} />
+            <img src={el.image} alt="" width={300} />
             <h2>{el.name}</h2>
             <Link className='Link' to={`/shop/${el.id}?category=${category}`}>
-              <Button label="Scopri di più" />
+              <Button label="Scopri di più" className="scoprilo"/>
               {/* <button className="scopri">Scopri di più</button> */}
             </Link>
           </div>

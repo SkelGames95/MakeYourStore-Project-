@@ -49,14 +49,14 @@ const setupDb = async () => {
       
           -- Inserimento dei dati dei prodotti
           INSERT INTO products (name, description, image, price, category_id) VALUES 
-              ('Game', 'Description for Game', 'https://franklinheights.org/wp-content/uploads/2019/09/board-games-png-4-transparent.png', 29.99, 1),
-              ('Bundle', 'Description for Bundle', 'https://static.vecteezy.com/system/resources/previews/021/013/967/original/chess-board-game-isolated-3d-render-free-png.png', 49.99, 1 ),
-              ('Sleeves', 'Description for Sleeves', 'https://ultrapro.com/cdn/shop/products/15912_GradedCardSlv_PSA_Flat_800x.png?v=1669162805', 9.99, 1),
-              ('Figure', 'Description for Figure', 'https://iconspng.com/uploads/superman-figure.png', 19.99, 1),
-              ('Poster', 'Description for Poster', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Tos-poster.png/1382px-Tos-poster.png', 14.99, 2),
-              ('Mat', 'Description for Mat', 'https://www.floormatshop.com/Custom-Logo-Floor-Matting/Custom-Shape/Custom-Shape-Logo-Mat-733-LG.png', 24.99, 2),
-              ('Artbook', 'Description for Artbook', 'https://www.inkhand.it/wp-content/uploads/2019/09/Artbook-Dario-Bellinato-Inkhand-front-2019.jpg', 39.99, 2),
-              ('Dice', 'Description for Dice', 'https://static.vecteezy.com/system/resources/previews/020/575/874/original/3d-icon-illustration-floating-dice-png.png', 4.99, 2);
+              ('Game', 'Description for Game', 'https://pyramidinternational.com/cdn/shop/products/wdc98146.jpg?v=1702052643', 29.99, 1),
+              ('Bundle', 'Description for Bundle', 'https://pyramidinternational.com/cdn/shop/products/wdc98146.jpg?v=1702052643', 49.99, 1 ),
+              ('Sleeves', 'Description for Sleeves', 'https://pyramidinternational.com/cdn/shop/products/wdc98146.jpg?v=1702052643', 9.99, 1),
+              ('Figure', 'Description for Figure', 'https://pyramidinternational.com/cdn/shop/products/wdc98146.jpg?v=1702052643', 19.99, 1),
+              ('Poster', 'Description for Poster', 'https://m.media-amazon.com/images/I/91RDcM4iJ+L._AC_UF1000,1000_QL80_.jpg', 14.99, 2),
+              ('Mat', 'Description for Mat', 'https://m.media-amazon.com/images/I/91RDcM4iJ+L._AC_UF1000,1000_QL80_.jpg', 24.99, 2),
+              ('Artbook', 'Description for Artbook', 'https://m.media-amazon.com/images/I/91RDcM4iJ+L._AC_UF1000,1000_QL80_.jpg', 39.99, 2),
+              ('Dice', 'Description for Dice', 'https://m.media-amazon.com/images/I/91RDcM4iJ+L._AC_UF1000,1000_QL80_.jpg', 4.99, 2);
         `);
 
 

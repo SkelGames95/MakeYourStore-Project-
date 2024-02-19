@@ -35,11 +35,12 @@
     color: white;
     border-bottom: 1px solid orange;
     flex-wrap: wrap;
-
+    background: linear-gradient(135deg,rgba(255, 166, 0, 0.082),rgba(0, 0, 0, 0));
 }
 
 .productDetails {
     left: 800px;
+    
 }
 
 .productDetails p {
@@ -96,6 +97,12 @@
 }
 
 .cart-total p {
+    color: white;
+}
+
+.alert {
+    text-align: center;
+    font-size: 40px;
     color: white;
 }
 

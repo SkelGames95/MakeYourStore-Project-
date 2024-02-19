@@ -23,14 +23,12 @@ export function SingleSection({ }) {
         window.scrollTo(0, 0)
     }, [id])
 
-    // const [games, setGames] = useState([]);
-    // const [figures, setFigures] = useState([]);
-    // const [clothes, setClotes] = useState([]);
     const [carrello, setCarrello] = useState([]);
     const [input, setInput] = useState(1)
-
     const [gadgets, setGadgets] = useState([]);
     const [MYS, setMYS] = useState([]);
+    const [showMessage, setShowMessage] = useState(false);
+
 
     async function fetchCategory(category, setter) {
         const response = await fetch(`http://localhost:3000/api/products/category/${category}`)
@@ -69,6 +67,14 @@ export function SingleSection({ }) {
             localStorage.setItem("carrello", JSON.stringify(oldCart))
         }
         setInput(1)
+
+                // Mostra il messaggio "Prodotto aggiunto al carrello"
+                setShowMessage(true);
+
+                // Resetta lo stato del messaggio dopo 2 secondi
+                setTimeout(() => {
+                    setShowMessage(false);
+                }, 2000);
     }
 
     function handleInput(event) {
@@ -100,6 +106,7 @@ export function SingleSection({ }) {
                     </div>
                 </div>
             </div>
+            {showMessage && <p className="aggiunto">Product added to cart!</p>}
             <ReviSection productId={singleProduct.id} />
             <div className="sliderContainer">
                 <h2 className='potrebbe'>POTREBBE INTERESSARTI ANCHE</h2>

@@ -31,9 +31,9 @@ export function ShopSection() {
                 </div>
             </div>
             <div className="sliderContainer">
-                <h1>MYS THEME</h1>
+                <h1 className="category">MAKE YOUR STORY</h1>
                 <Carousel items={MYS} category="MYS" />
-                <h1>GADGETS</h1>
+                <h1 className="category">GADGETS</h1>
                 <Carousel items={gadgets} category="Gadgets" />
             </div>
         </div>

@@ -69,6 +69,12 @@
     color: orange;
 }
 
+.aggiunto {
+    text-align: center;
+    font-size: 30px;
+    color: orange;
+}
+
 .price {
     font-size: 30px;
     color: white;
@@ -86,22 +92,12 @@
 
 .rightside input {
     margin-left: .5rem;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
     border: solid 1px orange;
     color: orange;
     border-radius: 3px;
     padding: .5rem;
 }
-
-.rightside input {
-    margin-left: .5rem;
-    background-color: black;
-    border: solid 1px orange;
-    color: orange;
-    border-radius: 3px;
-    padding: .5rem;
-}
-
 .rightside p {
     font-family: CrimeFighter;
     font-size: 20px;
