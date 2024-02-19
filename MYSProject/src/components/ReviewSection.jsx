@@ -25,7 +25,7 @@ export function ReviSection({ productId }) {
     if (productId !== undefined) {
       fetchReviews(productId)
       console.log(savedReviews)
-  }
+    }
   }, [productId])
   //Al caricamenteo della pagina, richiama la funzione fetchReviews()
 
@@ -64,18 +64,34 @@ export function ReviSection({ productId }) {
   }, [review]);
   //Calcolo dell'average rating (funziona solo in front-end)
 
+
+  async function addReview(productId, rating, description) {
+    const response = await fetch('http://localhost:3000/api/products/reviews', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        productId: productId,
+        rating: rating,
+        description: description,
+      }),
+    });
+  }
+
   function handleSubmit(event) {
+    addReview(productId, input.rating, input.description)
+
     event.preventDefault();
     const newReview = {
-      username: input.username,
       description: input.description,
       rating: input.rating
     };
+
     const updatedReview = [...review, newReview];
     localStorage.setItem(localStorageKey, JSON.stringify(updatedReview));
     setReview(updatedReview);
     setInput({
-      username: "",
       description: "",
       rating: ""
     });
