@@ -23,9 +23,9 @@ export function SingleSection({ }) {
         window.scrollTo(0, 0)
     }, [id])
 
-    const [games, setGames] = useState([]);
-    const [figures, setFigures] = useState([]);
-    const [clothes, setClotes] = useState([]);
+    // const [games, setGames] = useState([]);
+    // const [figures, setFigures] = useState([]);
+    // const [clothes, setClotes] = useState([]);
     const [carrello, setCarrello] = useState([]);
     const [input, setInput] = useState(1)
 
@@ -46,9 +46,9 @@ export function SingleSection({ }) {
     function addToCart() {
         const product = {
             id: singleProduct.id,
-            title: singleProduct.title,
+            name: singleProduct.name,
             price: singleProduct.price,
-            avatar: singleProduct.avatar,
+            image: singleProduct.image,
             quantity: Number(input),
         }
         // console.log(product)

@@ -26,11 +26,17 @@
     object-fit: contain;
     align-items: center;
     justify-content: center;
+    align-self: center;
 }
 
 .singleCard img:hover{
     transform: scale(110%);
     transition: 0.5s;
+}
+.singleCard img{
+max-width: 200px;
+object-fit: contain;
+
 }
 
 
@@ -64,10 +70,12 @@
         object-fit: contain;
     }
     .singleCard{
-        width: 100px;
-        padding-left: 3rem;
+        /* width: 100px; */
+        padding-left: 30%;
         align-items: center;
         justify-content: center;
+        align-self:center;
+        text-align: center;
     }
     .singleCard h2{
         width: 100px;
@@ -79,5 +87,6 @@
         width: 100%;
         padding: 1rem;
     }
+    
 
 }

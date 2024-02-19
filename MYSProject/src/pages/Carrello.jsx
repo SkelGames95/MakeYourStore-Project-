@@ -28,9 +28,9 @@ export function Carrello() {
             {cart && cart.map((product, index) => (
                 <div className="product-container">
                     <div className="imageDetails">
-                        <img src={product.avatar} alt="" />
+                        <img src={product.image} alt="" />
                         <div className="productDetails">
-                            <p><span>Product</span>: {product.title}</p>
+                            <p><span>Product</span>: {product.name}</p>
                             <p><span>Price</span>: {product.price}€</p>
                             <p><span>Quantity </span>: {product.quantity}</p>
                         </div>
@@ -39,7 +39,7 @@ export function Carrello() {
                 </div>
             ))}
             <div className="cart-total">
-                <p><span>Total</span>: {cartTotal}€</p>
+                <p><span>Total</span>: {cartTotal.toFixed(2)}€</p>
                 <Button label="Checkout" />
 
             </div>
