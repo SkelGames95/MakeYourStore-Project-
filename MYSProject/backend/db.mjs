@@ -17,23 +17,21 @@ const setupDb = async () => {
           -- Creazione della tabella categories        
         DROP TABLE IF EXISTS categories CASCADE;
           CREATE TABLE categories (
-              id SERIAL PRIMARY KEY,
-              name TEXT
+            id SERIAL PRIMARY KEY,
+            name TEXT
           );
       
           -- Creazione della tabella products
           DROP TABLE IF EXISTS products CASCADE;
           CREATE TABLE products (
-              id SERIAL PRIMARY KEY,
-              name TEXT NOT NULL,
-              description TEXT,
-              image TEXT,
-              price NUMERIC NOT NULL,
-              category_id INT REFERENCES categories(id)
-          );
-=======
-  console.log("Starting")
-  await db.none(`
+            id SERIAL PRIMARY KEY,
+            name TEXT NOT NULL,
+            description TEXT,
+            image TEXT,
+            price NUMERIC NOT NULL,
+            category_id INT REFERENCES categories(id)
+            );
+              
           --Creazione della tabella reviews
           DROP TABLE IF EXISTS reviews CASCADE;
           CREATE TABLE reviews (
@@ -69,4 +67,4 @@ const setupDb = async () => {
 
 setupDb();
 
-export { db,setupDb };
+export { db, setupDb };

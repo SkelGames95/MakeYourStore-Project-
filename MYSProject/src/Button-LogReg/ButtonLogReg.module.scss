@@ -19,7 +19,8 @@
     overflow: hidden;
     font-size: 20px;
 }
-  
+
+
 .button:hover {
     transform: scale(1.05);
     border-color: #fff9;
@@ -27,7 +28,7 @@
  .button:hover::before {
     animation: shine 1.5s ease-out infinite;
 }
-  
+
  .button::before {
     content: "";
     position: absolute;
@@ -43,16 +44,16 @@
     left: -100px;
     opacity: 0.6;
 }
-  
+
 @keyframes shine {
     0% {
       left: -100px;
     }
-  
+
     60% {
       left: 100%;
     }
-  
+
     to {
       left: 100%;
     }

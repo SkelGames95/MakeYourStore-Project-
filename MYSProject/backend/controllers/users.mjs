@@ -4,25 +4,30 @@ import jwt from "jsonwebtoken";
 dotenv.config();
 
 const logIn = async (req, res) => {
-  console.log(req)
-  const { email, password } = req.body;
+  try {
+    console.log(req);
+    const { email, password } = req.body;
 
-  const user = await db.one("SELECT * FROM users WHERE email=$1", email);
+    const user = await db.one("SELECT * FROM users WHERE email=$1", email);
 
-  if (user && user.password === password) {
-    const payload = {
-      id: user.id,
-      email,
-    };
-    const { SECRET = "" } = process.env;
-    const token = jwt.sign(payload, SECRET);
+    if (user && user.password === password) {
+      const payload = {
+        id: user.id,
+        email,
+      };
+      const { SECRET = "" } = process.env;
+      const token = jwt.sign(payload, SECRET);
 
-    console.log(token);
+      console.log(token);
 
-    await db.none("UPDATE users SET token=$2 WHERE email=$1", [email, token]);
-    res.status(200).json({ id: user.id, email: user.email, token: token });
-  } else {
-    res.status(400).json({ msg: "Invalid credentials" });
+      await db.none("UPDATE users SET token=$2 WHERE email=$1", [email, token]);
+      res.status(200).json({ id: user.id, email: user.email, token: token });
+    } else {
+      res.status(400).json({ msg: "Invalid credentials" });
+    }
+  } catch (error) {
+    console.error('Errore durante il login:', error);
+    res.status(500).json({ msg: "Internal server error" });
   }
 };
 
