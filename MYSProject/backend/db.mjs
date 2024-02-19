@@ -30,10 +30,8 @@ const setupDb = async () => {
             image TEXT,
             price NUMERIC NOT NULL,
             category_id INT REFERENCES categories(id)
-              )`
-    )
-
-    await db.none(`
+            );
+              
           --Creazione della tabella reviews
           DROP TABLE IF EXISTS reviews CASCADE;
           CREATE TABLE reviews (

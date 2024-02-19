@@ -10,7 +10,7 @@ import Register from "./Login/Register";
 export const App = () => {
   return (
     <div>
-     
+     <Nav />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />

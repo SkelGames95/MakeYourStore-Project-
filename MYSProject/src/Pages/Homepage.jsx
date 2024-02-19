@@ -11,7 +11,7 @@ function onSearch(data) {
 export function Homepage() {
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
       <Hero />
       <Searchbar onSearch={onSearch} />
       <Welcome />
