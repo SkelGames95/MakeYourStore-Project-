@@ -7,6 +7,10 @@ a{
     position: fixed;
     width: 100%;
     z-index: 1;
+    background-image: url(../images/dios-01-01-01.png);
+    object-fit: contain;
+    background-position: center;
+    background-size: cover;
 }
 .header ul{
     margin: 0;
@@ -22,8 +26,15 @@ a{
     text-decoration: none;
 }
 
+.photos{
+    width: 3%;
+    margin-top: 0.3%;
+}
+
 .header ul a:hover{
-    background-color: #181818;
+    color: orange;
+    transition: 0.2s ease-in-out;
+    transform: scale(1.2);
 }
 .header .logo{
     float:left;
@@ -42,6 +53,7 @@ a{
     position: relative;
     float: right;
     cursor: pointer;
+    margin-top: 6px;
 }
 
 .header .menu-icon .nav-icon{
@@ -75,7 +87,6 @@ a{
     top: -5px;
 }
 
-
 .header .menu-btn{
     display: none;
 }
@@ -96,7 +107,7 @@ top:0
     top:0
 }
 
-@media (min-width:850px){
+@media (min-width:990px){
     .header li {
     float:left;
 }
@@ -113,7 +124,7 @@ top:0
 }
 }
 
-@media (min-width: 850px) {
+@media (min-width: 990px) {
     .header .menu {
         max-height: none;
         display: block;
@@ -123,3 +134,4 @@ top:0
         display: none;
     }
 }
+
