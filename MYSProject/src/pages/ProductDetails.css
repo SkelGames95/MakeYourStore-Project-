@@ -32,6 +32,9 @@
 
 }
 
+.singleProduct h4 {
+font-family: LuckiestGuy;
+}
 .singleProduct {
     display: flex;
     width: 75%;
