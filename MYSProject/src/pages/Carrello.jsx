@@ -34,14 +34,14 @@ export function Carrello() {
                             <p><span>Price</span>: {product.price}€</p>
                             <p><span>Quantity </span>: {product.quantity}</p>
                         </div>
-                        <Button className="remove" label="Remove" onClick={() => handleRemove(index)} />
+                        <Button className="remove" label="Remove" onClick={() => handleRemove(index)}/>
                     </div>
                 </div>
             ))}
             {cart && cart.length === 0 && <p className='alert2'>Oops, your cart is empty!</p> }
             {cart && cart.length > 0 && <div className="cart-total">
                 {cartTotal && <p><span>Total</span>: {cartTotal.toFixed(2)}€</p>}
-                <Button label="Checkout" />
+                <Button label="Checkout" className="checkout" />
             </div>}
         </div>
     );

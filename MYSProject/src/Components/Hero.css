@@ -19,14 +19,10 @@
 .buttonShopNow {
   /* margin: auto; */
   font-family: LuckiestGuy;
-  /* margin-top: 500px; */
+  margin-top: 500px;
   padding: 1rem;
   width: 200% !important;
 
-}
-
-.buttonShopNow:hover {
-  text-decoration: none;
 }
 
 .positionButton {
@@ -36,7 +32,7 @@
   justify-content: center !important;
   align-items: center !important;
   background-color: bisque;
-  margin-right: 100px;
+  margin-right: 150px;
   text-decoration: none !important;
 }
 

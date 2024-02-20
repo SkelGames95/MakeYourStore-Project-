@@ -81,8 +81,12 @@
     align-self: flex-end;
     left: 500px;
     margin-bottom: 1rem;
+    border-radius: 10px;
     /* position: relative; */
     /* top: 110px; */
+}
+.checkout{
+    border-radius: 10px;
 }
 
 .cart-total {
