@@ -38,7 +38,7 @@ export function Carrello() {
                     </div>
                 </div>
             ))}
-            {cart && cart.length === 0 && <p className='alert'>Oops, your cart is empty!</p> }
+            {cart && cart.length === 0 && <p className='alert2'>Oops, your cart is empty!</p> }
             {cart && cart.length > 0 && <div className="cart-total">
                 {cartTotal && <p><span>Total</span>: {cartTotal.toFixed(2)}€</p>}
                 <Button label="Checkout" />

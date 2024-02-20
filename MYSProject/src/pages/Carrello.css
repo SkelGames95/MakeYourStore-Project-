@@ -100,10 +100,11 @@
     color: white;
 }
 
-.alert {
+.alert2 {
     text-align: center;
     font-size: 40px;
     color: white;
+    font-family: LuckiestGuy;
 }
 
 @media screen and (max-width: 630px) {

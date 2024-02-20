@@ -36,6 +36,9 @@
 
 .scoprilo {
     width: 300px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: LuckiestGuy;
 }
 
 .singleCard img:hover {
@@ -52,7 +55,8 @@
 .singleCard h2 {
     margin-top: .5rem;
     font-size: 24px;
-    color: orange
+    color: orange;
+    font-family: LuckiestGuy;
 }
 
 .scopri {

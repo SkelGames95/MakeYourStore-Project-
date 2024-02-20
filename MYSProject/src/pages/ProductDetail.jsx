@@ -92,7 +92,7 @@ export function SingleSection({ }) {
                         </p>
                         <h4 >Price:</h4><p className='price'>{singleProduct.price}€</p>
                         <div className="buttonInput">
-                            <Button onClick={addToCart} label="Add to Cart" />
+                            <Button onClick={addToCart} label="Add to Cart" className="addToCart"/>
                             <label htmlFor="quantity" className="quantity">
                                 Quantity:
                             </label>
@@ -101,6 +101,7 @@ export function SingleSection({ }) {
                                 id="quantity"
                                 value={input}
                                 onChange={handleInput}
+                                className="numberInput"
                             />
                         </div>
                     </div>

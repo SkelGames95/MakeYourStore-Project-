@@ -6,11 +6,12 @@ import { Nav } from "./Components/Nav"
 import { Homepage } from "./Pages/Homepage";
 import Login from "./Login/Login";
 import Register from "./Login/Register";
+import Footer from "./Footer";
 
 export const App = () => {
   return (
     <div>
-     
+      <Nav />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
@@ -19,7 +20,7 @@ export const App = () => {
         <Route path={`/shop/:id`} element={<SingleSection />} />
         <Route path={`/cart`} element={<Carrello />} />
       </Routes>
-      
+      <Footer />
     </div>
   );
 };

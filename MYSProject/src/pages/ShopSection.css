@@ -33,6 +33,10 @@
     flex-direction: column;
 }
 
+.category {
+    font-family: LuckiestGuy;
+}
+
 .intestazione {
     width: 50%;
     display: flex;
@@ -93,7 +97,7 @@ font-family: CrimeFighter;
 @media screen and (max-width: 768px) {
 .sliderContainer{
     /* text-align: center; */
-}
+};
 .intestazione h3 {
     font-size: 20px;
     }

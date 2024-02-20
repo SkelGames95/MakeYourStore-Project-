@@ -113,7 +113,7 @@ export function ReviSection({ productId }) {
       <form className="form-container" onSubmit={handleSubmit}>
         <textarea name="description" value={input.description} id="description" cols="20" rows="5" onChange={handleChange}></textarea>
         <StarRating onRatingChange={handleRatingChange} />
-        <Button label="Submit" type="submit" disabled={input.rating === ""} />
+        <Button label="Submit" type="submit" disabled={input.rating === ""} className="submit" />
         {savedReviews && savedReviews.map && savedReviews.map((rev, index) => (
           <ul className="newReview">
             <li key={rev.id} className="review-inner">

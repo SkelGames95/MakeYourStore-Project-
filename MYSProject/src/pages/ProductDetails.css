@@ -1,6 +1,6 @@
 .container-elShop {
     background-image: url(./images/provaBackground.png);
-    background-color: black;
+    /* background-color: black; */
     width: 100%;
     height: 100%;
     font-family: LuckiestGuy;
@@ -21,6 +21,7 @@
 
 .rightside {
     padding-left: 1rem;
+    width: 75%;
     /* flex-wrap: wrap; */
 }
 
@@ -67,12 +68,14 @@
 
 .potrebbe {
     color: orange;
+    font-family: LuckiestGuy;
 }
 
 .aggiunto {
     text-align: center;
     font-size: 30px;
     color: orange;
+    font-family: LuckiestGuy;
 }
 
 .price {
@@ -84,6 +87,7 @@
     font-style: italic;
     color: orange;
     font-size: 30px;
+    font-family: LuckiestGuy;
 }
 
 .rightside h5 {
@@ -91,27 +95,47 @@
 }
 
 .rightside input {
-    margin-left: .5rem;
+    /* margin-left: .5rem; */
+    /* margin-top: 1rem; */
     background-color: rgba(0, 0, 0, 0);
-    border: solid 1px orange;
+    border: solid 1px orange !important;
     color: orange;
-    border-radius: 3px;
-    padding: .5rem;
+    border-radius: 3px !important;
+    padding: .5rem !important;
 }
+
 .rightside p {
     font-family: CrimeFighter;
     font-size: 20px;
 }
 
+.addToCart {
+    font-family: LuckiestGuy;
+    border-radius: 10px;
+}
+
 .quantity {
     margin-left: 1rem;
+    /* margin-top: 1rem; */
+    margin-bottom: 0rem;
+    color: white;
+    font-family: LuckiestGuy;
+    text-align: inherit;
+}
+
+.numberInput{
+    /* margin-top: 1rem; */
+    margin-left: 1rem;
+    padding: .5rem;
+    width: 30% !important;
 }
 
 .buttonInput {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
+
 
 @media screen and (max-width: 768px) {
     .singleProduct {
@@ -127,10 +151,6 @@
     .buttonInput {
         display: flex;
         flex-direction: column;
-    }
-
-    .buttonInput label {
-        margin-top: 1rem;
     }
 
     .rightside p {
