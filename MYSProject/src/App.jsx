@@ -9,11 +9,13 @@ import Register from "./Login/Register";
 import Footer from "./Footer";
 import { Header } from "./Components/Header"
 import './App.css'
+import NavBara from "./Components/NavBara"
 
 export const App = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
+      <NavBara/>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
