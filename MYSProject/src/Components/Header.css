@@ -13,10 +13,17 @@
     padding: 10px 40px;
     width: 100%;
     height: 10%;
+    background-image: url(../images/dios-01-01-01.png);
+    object-fit: contain;
+    background-position: center;
+    background-size: cover;
 }
-
 .photos {
     width: 80%;
+}
+.photos:hover {
+transform: scale(120%);
+transition: .5s;
 }
 
 .navbar-brand {
