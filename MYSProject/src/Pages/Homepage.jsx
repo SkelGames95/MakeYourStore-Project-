@@ -15,7 +15,7 @@ export function Homepage() {
       <Hero />
       <Searchbar onSearch={onSearch} />
       <Welcome />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
