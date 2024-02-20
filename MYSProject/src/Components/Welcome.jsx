@@ -1,6 +1,7 @@
 import "./Welcome.css";
 import "./HomepageButton.css";
 import { HomepageButton } from "./HomepageButton";
+import { Link } from "react-router-dom";
 
 export function Welcome() {
   return (
@@ -23,7 +24,9 @@ export function Welcome() {
           </p>
         </div>
       </div>
-      <HomepageButton className="button" content={"JOIN NOW"} />
+      <Link to="/register">
+        <HomepageButton className="button" content={"JOIN NOW"} />
+      </Link>
     </div>
   );
 }

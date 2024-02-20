@@ -2,6 +2,7 @@ import "./Hero.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-italia/dist/css/bootstrap-italia.min.css";
 import { HomepageButton } from "./HomepageButton";
+import { Link } from "react-router-dom";
 export function Hero() {
   return (
     <>
@@ -18,7 +19,10 @@ export function Hero() {
             </div>
           </div>
         </div>
-        <HomepageButton className="button" content={"SHOP NOW"} />
+
+        <Link to="/shop">
+          <HomepageButton className="button" content={"SHOP NOW"} />
+        </Link>
       </section>
     </>
   );
