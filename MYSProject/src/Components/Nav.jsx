@@ -18,7 +18,7 @@ export function Nav() {
           <Link to="/credits">Credits</Link>
         </li>
         <li>
-          <Link to="/profile">
+          <Link to="/login">
             <i className="fa fa-user"></i> Profilo
           </Link>
         </li>

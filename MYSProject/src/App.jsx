@@ -7,11 +7,12 @@ import { Homepage } from "./Pages/Homepage";
 import Login from "./Login/Login";
 import Register from "./Login/Register";
 import Footer from "./Footer";
+import { Header } from "./Components/Header"
 
 export const App = () => {
   return (
     <div>
-      <Nav />
+      <Header />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />

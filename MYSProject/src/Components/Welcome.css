@@ -10,6 +10,7 @@
 .main-title {
   font-size: 72px;
   color: white;
+
 }
 
 .container {
@@ -21,6 +22,18 @@
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.buttonJoin-container {
+    /* margin-right:100%; */
+    font-family: LuckiestGuy;
+    /* margin-top: 500px; */  
+    width: 15% !important;
+    height: 30px;
+}
+.buttonJoin{
+  padding: 1.5rem;
+
 }
 
 .welcome-img {
