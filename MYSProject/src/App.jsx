@@ -8,6 +8,7 @@ import Login from "./Login/Login";
 import Register from "./Login/Register";
 import Footer from "./Footer";
 import { Header } from "./Components/Header"
+import './App.css'
 
 export const App = () => {
   return (

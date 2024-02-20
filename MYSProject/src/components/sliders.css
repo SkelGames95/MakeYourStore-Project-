@@ -11,8 +11,8 @@
     width: 105%;
     padding: 1rem;
     /* backdrop-filter: blur(3px); */
-    background: linear-gradient(135deg,rgba(255, 166, 0, 0.082),rgba(0, 0, 0, 0));
-    filter: drop-shadow(3px 3px 10px #ffffff31);
+    /* background: linear-gradient(135deg,rgba(255, 166, 0, 0.082),rgba(0, 0, 0, 0));
+    filter: drop-shadow(3px 3px 10px #ffffff31); */
 }
 
 .Link:hover {

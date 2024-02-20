@@ -12,7 +12,7 @@ export function Homepage() {
   return (
     <div>
       <Hero />
-      <Searchbar onSearch={onSearch} />
+      {/* <Searchbar onSearch={onSearch} /> */}
       <Welcome />
     </div>
   );
