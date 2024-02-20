@@ -58,6 +58,10 @@ font-family: CrimeFighter;
     background-color: rgba(0, 0, 0, 0.494);
 }
 
+.category {
+    font-family: LuckiestGuy;
+}
+
 /* .ShopPreview {
     font-size: 3rem;
     padding-top: 2rem;

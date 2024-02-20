@@ -67,8 +67,4 @@ const setupDb = async () => {
 
 setupDb();
 
-<<<<<<< HEAD
 export { db, setupDb };
-=======
-export { db, setupDb };
->>>>>>> 6e036fa1e107f3e6975bd6c9c52c7d05e8d18a76
