@@ -1,12 +1,49 @@
+@font-face {
+  font-family: CrimeFighter;
+  src: url(../Font/CRIMFBRG.TTF);
+}
 
-.hero{
+@font-face {
+  font-family: LuckiestGuy;
+  src: url(../Font/luckiest-guy.regular.ttf);
+}
+
+.hero {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 40px;
+  width: 100%;
 }
 
-.button{
-  margin: auto;
+.buttonShopNow {
+  /* margin: auto; */
+  font-family: LuckiestGuy;
+  /* margin-top: 500px; */
+  padding: 1rem;
+  width: 200% !important;
+
 }
 
+.buttonShopNow:hover {
+  text-decoration: none;
+}
+
+.positionButton {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: bisque;
+  margin-right: 100px;
+  text-decoration: none !important;
+}
+
+
+.img-wrapper{
+  background-image: url(../assets/images/background-hero.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+}
