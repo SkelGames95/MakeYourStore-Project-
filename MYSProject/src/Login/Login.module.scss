@@ -1,9 +1,21 @@
+@font-face {
+  font-family: CrimeFighter;
+  src: url(../Font/CRIMFBRG.TTF);
+}
+
+@font-face {
+  font-family: LuckiestGuy;
+  src: url(../Font/luckiest-guy.regular.ttf);
+}
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: fantasy;
+  font-family: LuckiestGuy;
 }
+
+
 .containerlogin{
   height: 100vh;
   display: flex;

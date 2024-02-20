@@ -58,6 +58,9 @@
     color: orange;
     font-family: LuckiestGuy;
 }
+.Link {
+text-decoration: none;
+}
 
 .scopri {
     color: black;
