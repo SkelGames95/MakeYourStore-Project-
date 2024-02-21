@@ -1,26 +1,51 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
+import { useNavigate } from "react-router-dom";
 import "./NavBara.css";
 import MYSTitle from "../../images/MYSTitleSmall.png";
 import { Link } from "react-router-dom";
 
-const NavBara = ({ isLoggedIn }) => {
+const NavBara = () => {
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const history = useNavigate();
 
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   setIsLoggedIn(!!token);
-  //   console.log(token);
-  // }, []);
-
-  // const handleLogin = () => {
-  // };
-
-  const handleLogout = () => {
-    console.log("Logout completed")
-    localStorage.removeItem("token");
+  const handleLogin = async () => {
+    try {
+       
+      localStorage.setItem("isLoggedIn", "true");
+      setLoggedIn(true);
+       history("/login")   
+    } catch (error) {
+      console.error("Errore durante il login:", error);
+      setLoggedIn(false);
+    }
   };
 
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("/api/users/logout", {
+        method: "GET",
+        credentials: "include",
+      });
+
+      if (response.ok) {
+        setLoggedIn(false);
+        localStorage.clear();
+        localStorage.removeItem("isLoggedIn");
+
+        console.log("Logout successful");
+      } else {
+        console.error("Logout failed");
+      }
+    } catch (error) {
+      console.error("Errore durante il logout:", error);
+    }
+  };
+  useEffect(() => {
+    const storedLoggedIn = localStorage.getItem("isLoggedIn");
+    if (storedLoggedIn === "true") {
+      setLoggedIn(true);
+    }
+  }, []);
   return (
     <header className="header">
       <Link to="/" className="logo">
@@ -43,23 +68,15 @@ const NavBara = ({ isLoggedIn }) => {
         <li>
           <a href="#contacts">Contacts</a>
         </li>
-<<<<<<< HEAD
         <li>
-          <button style={{ width: '100px', height: '40px', background: "green", marginTop: "17px" }}><Link to="/login">Login</Link></button>
-          {/* <button style={{ backgroundColor: isLoggedIn }}><Link to="/" onClick={handleLogout}>Logout</Link></button> */}
-=======
-        <li className="btnContainer">
           {isLoggedIn ? (
             <button style={{ width: '100px', height: '40px',background:"red",marginTop:"17px" }}><Link to="/" onClick={handleLogout}>Logout</Link></button>
           ) : (
-            <button style={{ width: '100px', height: '40px',background:"green",marginTop:"17px" }}><Link to="/login" onClick={handleLogin}>
-              Login
-            </Link></button>
+            <button style={{ width: '100px', height: '40px',background:"green",marginTop:"17px" }} onClick={handleLogin}>Login</button>
           )}
->>>>>>> 7e033270431c87f658ba0f6adb9a59f0527f7d48
         </li>
-      </ul >
-    </header >
+      </ul>
+    </header>
   );
 };
 

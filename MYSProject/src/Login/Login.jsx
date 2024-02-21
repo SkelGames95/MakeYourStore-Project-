@@ -2,7 +2,7 @@ import { useNavigate,Link } from "react-router-dom"
 import classes from "./Login.module.scss";
 import { useEffect, useRef, useState } from "react";
 import Button from "../Button-LogReg/Button";
-const Login = () => {
+const Login = ({onLogin}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const[error,setError]=useState({})
