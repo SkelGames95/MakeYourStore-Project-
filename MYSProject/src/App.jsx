@@ -13,14 +13,6 @@ import { useEffect, useState } from "react"
 
 export const App = () => {
 
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const token = localStorage.getItem('token');
-
-  // useEffect(() => {
-  //     setIsLoggedIn(!!token);
-  //     console.log(token);
-  // }, [token]);
-
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
