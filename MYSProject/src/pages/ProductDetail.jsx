@@ -4,13 +4,25 @@ import { useEffect, useState } from 'react'
 import { Carousel } from '../Components/Carousel'
 import { ReviSection } from '../Components/ReviewSection'
 import { Button } from '../Components/Button'
+// import { useAuth } from '../Components/useToken'
 
-export function SingleSection({ isLoggedIn }) {
+
+
+export function SingleSection() {
     const [singleProduct, setsingleProduct] = useState({})
     const { id } = useParams()
     const location = useLocation()
     const queryParams = new URLSearchParams(location.search);
     const category = queryParams.get("category");
+    // const { isLoggedIn } = useAuth()
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const token = localStorage.getItem('token');
+
+  useEffect(() => {
+      setIsLoggedIn(!!token);
+      console.log(token);
+  }, [token]);
 
     async function fetchOnesingleProduct() {
         const response = await fetch(`http://localhost:3000/api/products/${id}`)
