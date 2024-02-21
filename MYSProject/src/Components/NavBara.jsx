@@ -9,6 +9,32 @@ const NavBara = ({ isLoggedIn, handleLogout }) => {
     handleLogout(); // Esegui la funzione di logout
   };
 
+  // const handleLogout = async () => {
+  //   try {
+  //     const response = await fetch("/api/users/logout", {
+  //       method: "GET",
+  //       credentials: "include",
+  //     });
+
+  //     if (response.ok) {
+  //       setLoggedIn(false);
+  //       localStorage.clear();
+  //       localStorage.removeItem("isLoggedIn");
+
+  //       console.log("Logout successful");
+  //     } else {
+  //       console.error("Logout failed");
+  //     }
+  //   } catch (error) {
+  //     console.error("Errore durante il logout:", error);
+  //   }
+  // };
+  // useEffect(() => {
+  //   const storedLoggedIn = localStorage.getItem("isLoggedIn");
+  //   if (storedLoggedIn === "true") {
+  //     setLoggedIn(true);
+  //   }
+  // }, []);
   return (
     <header className="header">
       <Link to="/" className="logo">
