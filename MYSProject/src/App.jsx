@@ -13,21 +13,30 @@ import { useEffect, useState } from "react"
 
 export const App = () => {
 
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const token = localStorage.getItem('token');
+
+  // useEffect(() => {
+  //     setIsLoggedIn(!!token);
+  //     console.log(token);
+  // }, [token]);
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const token = localStorage.getItem('token');
 
-  useEffect(() => {
-      setIsLoggedIn(!!token);
-      console.log(token);
-  }, [token]);
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
 
-  return (  
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
+  return (
     <div>
-      {/* <Header /> */}
-      <NavBara isLoggedIn={isLoggedIn}/>
+      <NavBara isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login handleLogin={handleLogin}/>} />
         <Route path="/register" element={<Register />} />
         <Route path="/shop" element={<ShopSection />} />
         <Route path={`/shop/:id`} element={<SingleSection/>} />

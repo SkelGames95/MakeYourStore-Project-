@@ -1,24 +1,12 @@
-import React, { useEffect, useState } from "react";
-import "./NavBara.css";
-import MYSTitle from "../../images/MYSTitleSmall.png";
-import { Link } from "react-router-dom";
+import React from 'react';
+import './NavBara.css';
+import MYSTitle from '../../images/MYSTitleSmall.png';
+import { Link } from 'react-router-dom';
 
-const NavBara = ({ isLoggedIn }) => {
-
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   setIsLoggedIn(!!token);
-  //   console.log(token);
-  // }, []);
-
-  // const handleLogin = () => {
-  // };
-
-  const handleLogout = () => {
-    console.log("Logout completed")
-    localStorage.removeItem("token");
+const NavBara = ({ isLoggedIn, handleLogout }) => {
+  const handleLogoutClick = () => {
+    localStorage.clear(); // Rimuovi tutti gli elementi dal localStorage
+    handleLogout(); // Esegui la funzione di logout
   };
 
   return (
@@ -38,28 +26,26 @@ const NavBara = ({ isLoggedIn }) => {
           <a href="#portfolio">Portfolio</a>
         </li>
         <li>
-          <a href="#shop">Shop</a>
+          <Link to="/shop">Shop</Link>
         </li>
         <li>
           <a href="#contacts">Contacts</a>
         </li>
-<<<<<<< HEAD
-        <li>
-          <button style={{ width: '100px', height: '40px', background: "green", marginTop: "17px" }}><Link to="/login">Login</Link></button>
-          {/* <button style={{ backgroundColor: isLoggedIn }}><Link to="/" onClick={handleLogout}>Logout</Link></button> */}
-=======
         <li className="btnContainer">
           {isLoggedIn ? (
-            <button style={{ width: '100px', height: '40px',background:"red",marginTop:"17px" }}><Link to="/" onClick={handleLogout}>Logout</Link></button>
+            <button style={{ width: '100px', height: '40px', background: 'red', marginTop: '17px' }}>
+              <Link to="/" onClick={handleLogoutClick}>
+                Logout
+              </Link>
+            </button>
           ) : (
-            <button style={{ width: '100px', height: '40px',background:"green",marginTop:"17px" }}><Link to="/login" onClick={handleLogin}>
-              Login
-            </Link></button>
+            <button style={{ width: '100px', height: '40px', background: 'green', marginTop: '17px' }}>
+              <Link to="/login">Login</Link>
+            </button>
           )}
->>>>>>> 7e033270431c87f658ba0f6adb9a59f0527f7d48
         </li>
-      </ul >
-    </header >
+      </ul>
+    </header>
   );
 };
 
