@@ -72,7 +72,7 @@ const NavBara = () => {
         <li>
           <a href="#contacts">Contacts</a>
         </li>
-        <li>
+        <li className="btnContainer">
           {isLoggedIn ? (
             <button style={{ width: '100px', height: '40px',background:"red",marginTop:"17px" }}><Link to="/" onClick={handleLogout}>Logout</Link></button>
           ) : (
