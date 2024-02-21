@@ -9,8 +9,12 @@ import Register from "./Login/Register";
 import Footer from "./Footer";
 import { Header } from "./Components/Header"
 import './App.css'
+<<<<<<< HEAD
 import { useEffect } from "react"
 import { useState } from "react"
+=======
+import NavBara from "./Components/NavBara"
+>>>>>>> 18d284b1aa2aa35abd2259239dd59dd4536e3d2e
 
 export const App = () => {
 
@@ -24,7 +28,8 @@ export const App = () => {
 
   return (  
     <div>
-      <Header />
+      {/* <Header /> */}
+      <NavBara/>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
