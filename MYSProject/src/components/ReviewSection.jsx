@@ -14,7 +14,7 @@ export function ReviSection({ productId }) {
       console.error('Product ID is undefined');
       return;
     }
-    console.log("productID:", productId);
+    // console.log("productID:", productId);
     const response = await fetch(`http://localhost:3000/api/products/reviews/${Number(productId)}`)
     const responseJson = await response.json()
     setSavedReviews(responseJson)
@@ -24,7 +24,7 @@ export function ReviSection({ productId }) {
   useEffect(() => {
     if (productId !== undefined) {
       fetchReviews(productId)
-      console.log(savedReviews)
+      // console.log(savedReviews)
     }
   }, [productId])
   //Al caricamenteo della pagina, richiama la funzione fetchReviews()
