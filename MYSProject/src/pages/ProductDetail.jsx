@@ -5,7 +5,7 @@ import { Carousel } from '../Components/Carousel'
 import { ReviSection } from '../Components/ReviewSection'
 import { Button } from '../Components/Button'
 
-export function SingleSection({ isLoggedIn }) {
+export function SingleSection({ isLoggedIn, token }) {
     const [singleProduct, setsingleProduct] = useState({})
     const { id } = useParams()
     const location = useLocation()
@@ -29,7 +29,6 @@ export function SingleSection({ isLoggedIn }) {
     const [MYS, setMYS] = useState([]);
     const [showMessage, setShowMessage] = useState(false);
 
-
     async function fetchCategory(category, setter) {
         const response = await fetch(`http://localhost:3000/api/products/category/${category}`)
         const responseJson = await response.json()
@@ -39,7 +38,7 @@ export function SingleSection({ isLoggedIn }) {
     useEffect(() => {
         fetchCategory("Gadgets", setGadgets)
         fetchCategory("MYS", setMYS)
-    }, [])
+    }, [token])
 
     const [error, setError] = useState({})
 
