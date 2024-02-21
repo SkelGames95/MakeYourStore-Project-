@@ -5,7 +5,7 @@ import { Carousel } from '../Components/Carousel'
 import { ReviSection } from '../Components/ReviewSection'
 import { Button } from '../Components/Button'
 
-export function SingleSection({ isLoggedIn, token }) {
+export function SingleSection({ isLoggedIn }) {
     const [singleProduct, setsingleProduct] = useState({})
     const { id } = useParams()
     const location = useLocation()
@@ -38,7 +38,7 @@ export function SingleSection({ isLoggedIn, token }) {
     useEffect(() => {
         fetchCategory("Gadgets", setGadgets)
         fetchCategory("MYS", setMYS)
-    }, [token])
+    }, [])
 
     const [error, setError] = useState({})
 
