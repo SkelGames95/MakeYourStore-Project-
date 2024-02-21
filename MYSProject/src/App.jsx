@@ -9,9 +9,20 @@ import Register from "./Login/Register";
 import Footer from "./Footer";
 import { Header } from "./Components/Header"
 import './App.css'
+import { useEffect } from "react"
+import { useState } from "react"
 
 export const App = () => {
-  return (
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+      const token = localStorage.getItem('token');
+      setIsLoggedIn(token);
+      console.log(token);
+  }, []);
+
+  return (  
     <div>
       <Header />
       <Routes>
@@ -19,7 +30,7 @@ export const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/shop" element={<ShopSection />} />
-        <Route path={`/shop/:id`} element={<SingleSection />} />
+        <Route path={`/shop/:id`} element={<SingleSection isLoggedIn={isLoggedIn}/>} />
         <Route path={`/cart`} element={<Carrello />} />
       </Routes>
       <Footer />
