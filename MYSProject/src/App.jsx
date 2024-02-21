@@ -2,16 +2,14 @@ import { Route, Routes } from "react-router-dom"
 import { ShopSection } from "./Pages/ShopSection"
 import { SingleSection } from "./Pages/ProductDetail"
 import { Carrello } from "./Pages/Carrello"
-import { Nav } from "./Components/Nav"
 import { Homepage } from "./Pages/Homepage";
 import Login from "./Login/Login";
 import Register from "./Login/Register";
 import Footer from "./Footer";
-import { Header } from "./Components/Header"
 import './App.css'
-import { useEffect } from "react"
-import { useState } from "react"
+
 import NavBara from "./Components/NavBara"
+import { useEffect, useState } from "react"
 
 export const App = () => {
 
