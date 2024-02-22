@@ -1,24 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./NavBara.css";
 import MYSTitle from "../../images/MYSTitleSmall.png";
 import { Link } from "react-router-dom";
 
-const NavBara = ({ isLoggedIn }) => {
-
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   setIsLoggedIn(!!token);
-  //   console.log(token);
-  // }, []);
-
-  // const handleLogin = () => {
-  // };
-
-  const handleLogout = () => {
-    console.log("Logout completed")
-    localStorage.removeItem("token");
+const NavBara = ({ isLoggedIn, handleLogout }) => {
+  const handleLogoutClick = () => {
+    localStorage.clear(); // Rimuovi tutti gli elementi dal localStorage
+    handleLogout(); // Esegui la funzione di logout
   };
 
   return (
@@ -32,23 +20,52 @@ const NavBara = ({ isLoggedIn }) => {
       </label>
       <ul className="menu">
         <li>
-          <a href="#about">About</a>
+          <Link to="/news">News</Link>
         </li>
         <li>
-          <a href="#portfolio">Portfolio</a>
+          <Link to="/shop">Shop</Link>
         </li>
         <li>
-          <a href="#shop">Shop</a>
+          <Link to="/cart">Cart</Link>
         </li>
         <li>
-          <a href="#contacts">Contacts</a>
+          <Link to="/credits">Credits</Link>
         </li>
+<<<<<<< HEAD
         <li>
           <button style={{ width: '100px', height: '40px', background: "green", marginTop: "17px" }}><Link to="/login">Login</Link></button>
           {/* <button style={{ backgroundColor: isLoggedIn }}><Link to="/" onClick={handleLogout}>Logout</Link></button> */}
+=======
+        <li className="btnContainer">
+          {isLoggedIn ? (
+            <button
+              style={{
+                width: "100px",
+                height: "40px",
+                background: "red",
+                marginTop: "17px",
+              }}
+            >
+              <Link to="/" onClick={handleLogoutClick}>
+                Logout
+              </Link>
+            </button>
+          ) : (
+            <button
+              style={{
+                width: "100px",
+                height: "40px",
+                background: "green",
+                marginTop: "17px",
+              }}
+            >
+              <Link to="/login">Login</Link>
+            </button>
+          )}
+>>>>>>> 38611fb0c8a55fe06a57afc54f33a7c14589f4bd
         </li>
-      </ul >
-    </header >
+      </ul>
+    </header>
   );
 };
 
