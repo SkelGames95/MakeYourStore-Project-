@@ -14,19 +14,16 @@ export function ReviSection({ productId, isLoggedIn }) {
       console.error('Product ID is undefined');
       return;
     }
-    // console.log("productID:", productId);
     const response = await fetch(`http://localhost:3000/api/products/reviews/${Number(productId)}`)
     const responseJson = await response.json()
     setSavedReviews(responseJson)
   }
-  //Fetcha le reviews dal DB
 
   useEffect(() => {
     if (productId !== undefined) {
       fetchReviews(productId)
-      // console.log(savedReviews)
     }
-  }, [productId])
+  }, [productId, fetchReviews()])
   //Al caricamenteo della pagina, richiama la funzione fetchReviews()
 
   const [input, setInput] = useState({
@@ -136,14 +133,14 @@ export function ReviSection({ productId, isLoggedIn }) {
             </li></ul>
         ))}
       </form>
-      <ul className="newReview">
+      {/* <ul className="newReview">
         {review && review.map((el, index) => (
           <li key={index} className="review-inner">
             <p><span>Description:</span> {el.description}</p>
             <p><span>Rating:</span> {el.rating}</p>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   )
 }
