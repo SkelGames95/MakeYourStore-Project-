@@ -43,20 +43,9 @@ const NavBara = ({ isLoggedIn }) => {
         <li>
           <a href="#contacts">Contacts</a>
         </li>
-<<<<<<< HEAD
         <li>
           <button style={{ width: '100px', height: '40px', background: "green", marginTop: "17px" }}><Link to="/login">Login</Link></button>
           {/* <button style={{ backgroundColor: isLoggedIn }}><Link to="/" onClick={handleLogout}>Logout</Link></button> */}
-=======
-        <li className="btnContainer">
-          {isLoggedIn ? (
-            <button style={{ width: '100px', height: '40px',background:"red",marginTop:"17px" }}><Link to="/" onClick={handleLogout}>Logout</Link></button>
-          ) : (
-            <button style={{ width: '100px', height: '40px',background:"green",marginTop:"17px" }}><Link to="/login" onClick={handleLogin}>
-              Login
-            </Link></button>
-          )}
->>>>>>> 7e033270431c87f658ba0f6adb9a59f0527f7d48
         </li>
       </ul >
     </header >
