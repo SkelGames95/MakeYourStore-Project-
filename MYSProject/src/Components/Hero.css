@@ -56,7 +56,10 @@
     background-repeat: no-repeat;
     height: 100%;
   }
-
+  .buttonShopNow{
+    position:relative;
+    top: 30px;
+  }
 }
 @media screen and (max-width: 720px) {
   .hero {
@@ -86,3 +89,77 @@
   }
 
 }
+
+@media screen and (max-width:670px){
+  .buttonShopNow{
+     width: 50%;
+  }
+  }
+  @media (max-width: 1365px) {
+    .buttonShopNow{
+      width: 30%;
+    }
+  }
+
+
+  @media screen and (max-width: 500px) {
+    .hero {
+      height: 670px;
+    }
+  
+    .img-wrapper {
+      background-image: url(../assets/images/background-hero300px.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100%;
+    }
+  
+  }
+  @media screen and (max-width: 468px) {
+    .hero {
+      height:630px;
+    }
+  
+    .img-wrapper {
+      background-image: url(../assets/images/background-hero300px.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100%;
+    }
+  
+  }
+  @media screen and (max-width: 442px) {
+    .hero {
+      height:420px;
+    }
+  
+    .img-wrapper {
+      background-image: url(../assets/images/background-hero900px.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100%;
+    }
+    .buttonShopNow{
+      position:relative;
+      top: 25px;
+    }
+
+  
+  }
+  @media screen and (max-width: 320px) {
+    .hero {
+      height:100vw;
+    }
+  
+    .img-wrapper {
+      background-image: url(../assets/images/background-hero900px.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100%;
+    }
+  
+  }

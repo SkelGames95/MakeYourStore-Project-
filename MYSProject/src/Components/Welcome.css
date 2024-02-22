@@ -65,6 +65,9 @@
   .copy {
     font-size: 18px;
   }
+  .buttonJoin{
+    width: 25%;
+  }
 }
 
 @media (max-width: 1365px) {
@@ -72,7 +75,9 @@
     font-size: 14px;
     line-height: 1.3rem;
   }
-
+  .buttonJoin{
+    width: 30%;
+  }
   .container {
     height: 100%;
     flex-wrap: wrap;
@@ -89,6 +94,9 @@
   .main-title {
     font-size: 50px;
     text-align: center;
+  }
+  .buttonJoin{
+    width: 40%;
   }
 }
 
@@ -108,7 +116,11 @@
     object-fit: contain;
   }
 }
-
+@media screen and (max-width:670px){
+  .buttonJoin{
+    width: 50%;
+  }
+}
 @media (max-width: 545px) {
   .copy {
     text-align: center;
@@ -119,6 +131,11 @@
     width: 100%;
     object-fit: contain;
   }
+}
+@media (max-width: 450px) {
+.buttonJoin{
+  width: 65%;
+}
 }
 @media (max-width: 425px) {
   .copy {
@@ -131,4 +148,9 @@
     text-align: center;
     font-size: 6px;
   }
+}
+@media (max-width: 320px) {
+ .buttonJoin{
+  width: 90%;
+ }
 }
