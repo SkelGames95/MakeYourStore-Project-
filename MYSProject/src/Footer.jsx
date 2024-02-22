@@ -3,7 +3,7 @@ import classes from "./Footer.module.scss";
 export const Footer = () => {
   return (
     <div>
-      <footer>
+      <footer className={classes.footerMain}>
         <div className={`${classes.container} ${classes.WH}`}>
           <div className={`${classes.bigButton} ${classes.WH}`}>
             <div className={classes.kickButton}>

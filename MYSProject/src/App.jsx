@@ -10,6 +10,7 @@ import Footer from "./Footer";
 import "./App.css";
 
 import NavBara from "./Components/NavBara";
+import { News } from "./News";
 
 export const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -32,6 +33,7 @@ export const App = () => {
         <Route path="/shop" element={<ShopSection />} />
         <Route path={`/shop/:id`} element={<SingleSection isLoggedIn={isLoggedIn} token ={isLoggedIn}/>} />
         <Route path={`/cart`} element={<Carrello />} />
+        <Route path={`/news`} element={<News />} />
       </Routes>
       <Footer />
     </div>

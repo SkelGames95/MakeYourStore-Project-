@@ -4,15 +4,22 @@
     box-sizing: border-box;
 }
 
+.footerMain{
+    position: relative;
+    min-height: 90vh;
+}
+
 .container {
     display: flex;
     flex-direction: column;
-    // background-color: #181818;
     color: white;
     background-image: url(../images/dios-01-01-01.png);
     object-fit: contain;
     background-position: center;
     background-size: cover;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .h3 {
@@ -26,6 +33,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    top: 32%;
 }
 
 .kickButton {
@@ -156,7 +164,9 @@
         align-items: center;
         gap: 3em;
     }
-
+    .bigButton{
+        top: 0%;
+    }
     .links,
     .links2,
     .footerLogo,
@@ -202,7 +212,7 @@
 @media (max-width: 705px) {
     .kickButton {
         width: 70%;
-        margin-top: 5rem;
+        margin-top: 0rem;
     }
 }
 
