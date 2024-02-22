@@ -30,7 +30,7 @@ export function Carrello() {
         <div className="carrello-container">
             <h2 className='cart'>Your Cart</h2>
             {cart && cart.map((product, index) => (
-                <div className="product-container">
+                <div className="product-container" key={index}>
                     <div className="imageDetails">
                         <img src={product.image} alt=""/>
                         <div className="productDetails">

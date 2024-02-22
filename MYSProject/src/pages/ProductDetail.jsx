@@ -21,7 +21,7 @@ export function SingleSection() {
 
     useEffect(() => {
         setIsLoggedIn(!!token);
-        console.log(token);
+        // console.log(token);
     }, [token]);
 
     async function fetchOnesingleProduct() {
