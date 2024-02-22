@@ -131,7 +131,7 @@
   
   }
   @media screen and (max-width: 442px) {
-    .hero {
+    /* .hero {
       height:420px;
     }
   
@@ -141,7 +141,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       height: 100%;
-    }
+    } */
     .buttonShopNow{
       position:relative;
       top: 25px;
@@ -149,17 +149,20 @@
 
   
   }
-  @media screen and (max-width: 320px) {
-    .hero {
+   @media screen and (max-width: 324px) {
+    /* .hero {
       height:100vw;
+    } */
+   .buttonShopNow{
+      position:relative;
+      top: 100%;
     }
-  
-    .img-wrapper {
+    /* .img-wrapper {
       background-image: url(../assets/images/background-hero900px.jpg);
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
       height: 100%;
     }
-  
-  }
+   */
+  } 

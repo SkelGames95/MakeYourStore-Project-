@@ -1,3 +1,13 @@
+@font-face {
+   font-family: CrimeFighter;
+   src: url(/Font/CRIMFBRG.TTF);
+}
+
+@font-face {
+   font-family: LuckiestGuy;
+   src: url(/Font/luckiest-guy.regular.ttf);
+}
+
 .backgroundImageStyle{
    background-image: url("../images/provaBackground.png");
    background-size: cover;
@@ -9,15 +19,22 @@
    color: whitesmoke;
    width: 50%;
    text-align: center;
-   border: 2px solid green;
+   border: 2px solid orange;
    border-radius: 30px;
    padding: 1%;
 }
-
+#p-news:hover{
+   transform: scale(104%);
+   transition: 0.2s;
+   background-color: rgba(61, 61, 61, 0.459);
+}
+#p-news p{
+font-family: CrimeFighter;
+}
 #news{
    width: 100%;
    text-align: center;
-   color: whitesmoke;
+   color: orange;
 }
 .content2-news{
    padding-top: 5rem;
