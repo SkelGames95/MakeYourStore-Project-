@@ -56,7 +56,7 @@ export function SingleSection() {
 
     function addToCart() {
         if (!isLoggedIn) {
-            const newError = { logged: "You are not logged!" }
+            const newError = { logged: "You are not logged, please log in to start to buy!" }
             setError(newError);
             return
         }
@@ -126,7 +126,7 @@ export function SingleSection() {
                     </div>
                 </div>
             </div>
-            {error.logged && <p>{error.logged}</p>}
+            {error.logged && <p className='notLogged' style={{color:"red", textAlign:"center", fontSize:"24px" }}>{error.logged}</p>}
             {showMessage && <p className="aggiunto">Product added to cart!</p>}
             {isLoggedIn && <ReviSection productId={singleProduct.id} />}
             <div className="sliderContainer">

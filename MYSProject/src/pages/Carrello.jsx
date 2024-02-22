@@ -8,9 +8,13 @@ export function Carrello() {
     const [cart, setCart] = useState([])
 
     useEffect(() => {
-        const product = localStorage.getItem("carrello")
-        setCart(JSON.parse(product))
-    }, [])
+        const product = localStorage.getItem("carrello");
+        if (product) {
+            setCart(JSON.parse(product));
+        } else {
+            setCart([]);
+        }
+    }, []);
 
     function handleRemove(indexToRemove) {
         const updatedCart = cart.filter((_, index) => index !== indexToRemove);
