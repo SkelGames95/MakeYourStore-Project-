@@ -3,7 +3,7 @@ import "./ReviewSection.css"
 import { Button } from "./Button";
 import { StarRating } from "./StarRating";
 
-export function ReviSection({ productId }) {
+export function ReviSection({ productId, isLoggedIn }) {
 
   const [savedReviews, setSavedReviews] = useState([]);
   const [review, setReview] = useState([])
@@ -55,34 +55,47 @@ export function ReviSection({ productId }) {
 
   useEffect(() => {
     if (savedReviews.length > 0) {
-        const totalRating = savedReviews.reduce((acc, cur) => acc + Number(cur.rating), 0);
-        const avgRating = totalRating / savedReviews.length;
-        setAverageRating(avgRating);
+      const totalRating = savedReviews.reduce((acc, cur) => acc + Number(cur.rating), 0);
+      const avgRating = totalRating / savedReviews.length;
+      setAverageRating(avgRating);
     } else {
-        setAverageRating(0);
+      setAverageRating(0);
     }
-}, [savedReviews]);
+  }, [savedReviews]);
   //Calcolo dell'average rating (backend)
 
 
   async function addReview(productId, rating, description) {
-    const response = await fetch('http://localhost:3000/api/products/reviews', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        productId: productId,
-        rating: rating,
-        description: description,
-      }),
-    });
+    if (isLoggedIn) {
+      const response = await fetch('http://localhost:3000/api/products/reviews', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          productId: productId,
+          rating: rating,
+          description: description,
+        }),
+      });
+    }
   }
+  const [error, setError] = useState({})
+  const [showMessage, setShowMessage] = useState(false);
 
   function handleSubmit(event) {
     addReview(productId, input.rating, input.description)
 
     event.preventDefault();
+    if (!isLoggedIn) {
+      const newError = { logged: "You are not logged, please log in to leave your comment!" }
+      setError(newError);
+      setTimeout(() => {
+        setError({}); // Nasconde il messaggio di errore dopo 2 secondi
+      }, 1500);
+      return;
+    }
+
     const newReview = {
       description: input.description,
       rating: input.rating
@@ -114,6 +127,7 @@ export function ReviSection({ productId }) {
         <textarea name="description" value={input.description} id="description" cols="20" rows="5" onChange={handleChange}></textarea>
         <StarRating onRatingChange={handleRatingChange} />
         <Button label="Submit" type="submit" disabled={input.rating === ""} className="submit" />
+        {error.logged && <p className='notLogged' style={{ color: "red", textAlign: "center", fontSize: "24px" }}>{error.logged}</p>}
         {savedReviews && savedReviews.map && savedReviews.map((rev, index) => (
           <ul className="newReview">
             <li key={rev.id} className="review-inner">
