@@ -39,6 +39,7 @@ export function Carrello() {
                             <p><span>Quantity </span>: {product.quantity}</p>
                         </div>
                         <Button className="remove" label="Remove" onClick={() => handleRemove(index)}/>
+                        <div className="separating"></div>
                     </div>
                 </div>
             ))}

@@ -49,7 +49,6 @@
 .singleCard img {
     max-width: 300px;
     object-fit: contain;
-
 }
 
 .singleCard h2 {
@@ -138,4 +137,13 @@ text-decoration: none;
     }
 
 
+}
+@media screen and (max-width: 400px) {
+    .singleCard img {
+        max-width: 200px;
+        object-fit: contain;
+    }
+    .scoprilo{
+        width: 200px;
+    }
 }
