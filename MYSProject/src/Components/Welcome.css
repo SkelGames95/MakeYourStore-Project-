@@ -1,10 +1,10 @@
 .welcome-container {
   width: 100%;
-  height: 300px;
+  /* height: 300px; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 500px;
+  /* margin-bottom: 500px; */
   margin-top: 2rem;
 }
 
@@ -29,17 +29,22 @@
   /* margin-right:100%; */
   font-family: LuckiestGuy;
   /* margin-top: 500px; */
-  width: 15% !important;
-  height: 30px;
+  width: 100% !important;
+  margin-bottom: 5rem;
+  /* height: 30px; */
 }
 
 .buttonJoin {
   padding: 1.5rem;
-
+  margin: 0 auto;
+  width: 282px;
+  height: 50px;
+  /* margin-bottom: 10rem; */
+  padding-bottom: 1rem;
 }
 
 .welcome-img {
-  height: 270px;
+  height: 270px;  
   width: 350px;
   border-radius: 10%;
   object-fit: cover;

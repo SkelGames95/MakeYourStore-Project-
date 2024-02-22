@@ -26,7 +26,6 @@ export function Welcome() {
         </div>
       </div>
       <Link to="/register" className="buttonJoin-container">
-        {/* <HomepageButton className="buttonJoin" content={"JOIN NOW"} /> */}
         <Button label="JOIN NOW" className="buttonJoin"/>
       </Link>
     </div>
