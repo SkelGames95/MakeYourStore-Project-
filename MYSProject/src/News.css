@@ -59,8 +59,8 @@ font-family: CrimeFighter;
    }
 }
 
-@media (max-width: 970px){
+@media (max-width: 990px){
    .backgroundImageStyle{
-      padding-bottom: 10%;
+      padding-bottom: 30%;
    }
 }

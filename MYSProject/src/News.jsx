@@ -56,7 +56,7 @@ export function News() {
               on Kickstarter and our socials. The adventure is about to unfold,
               and you won`t want to miss a single announcement!
             </p>
-            
+
           </div>
         </div>
       </div>

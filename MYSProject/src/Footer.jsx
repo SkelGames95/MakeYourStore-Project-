@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <div>
       <footer className={classes.footerMain}>
-        <div className={`${classes.container} ${classes.WH}`}>
+        <div className={`${classes.container}`}>
           <div className={`${classes.bigButton} ${classes.WH}`}>
             <div className={classes.kickButton}>
               <div className={classes.kickP}>
