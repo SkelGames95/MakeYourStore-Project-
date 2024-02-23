@@ -23,7 +23,7 @@ export function ReviSection({ productId, isLoggedIn }) {
     if (productId !== undefined) {
       fetchReviews(productId)
     }
-  }, [productId, fetchReviews()])
+  }, [productId, fetchReviews])
   //Al caricamenteo della pagina, richiama la funzione fetchReviews()
 
   const [input, setInput] = useState({
