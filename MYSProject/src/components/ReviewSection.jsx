@@ -89,7 +89,7 @@ export function ReviSection({ productId, isLoggedIn }) {
       setError(newError);
       setTimeout(() => {
         setError({}); // Nasconde il messaggio di errore dopo 2 secondi
-      }, 1500);
+      }, 2000);
       return;
     }
 
