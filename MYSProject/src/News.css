@@ -18,19 +18,23 @@
 #p-news{
    color: whitesmoke;
    width: 50%;
-   text-align: center;
+   text-align: center;  
    border: 2px solid orange;
    border-radius: 30px;
    padding: 1%;
+   cursor: pointer;
+   font-family: CrimeFighter;   
+}
+
+#p-news h3{
+   font-family: LuckiestGuy;
 }
 #p-news:hover{
    transform: scale(104%);
    transition: 0.2s;
    background-color: rgba(61, 61, 61, 0.459);
 }
-#p-news p{
-font-family: CrimeFighter;
-}
+
 #news{
    width: 100%;
    text-align: center;
