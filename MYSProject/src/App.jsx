@@ -7,12 +7,16 @@ import { Homepage } from "./Pages/Homepage";
 import Login from "./Login/Login";
 import Register from "./Login/Register";
 import Footer from "./Footer"
+import Cancel from "./Pages/cancel"
+import Success from "./Pages/success"
 
 export const App = () => {
   return (
     <div>
      <Nav />
       <Routes>
+        <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

@@ -1,7 +1,7 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
 import { logIn, signUp, logOut } from "./controllers/users.mjs"
-import { GetProducts, GetByCategory, GetById } from './controllers/products.mjs';
+import { GetProducts, GetByCategory, GetById, Payment } from './controllers/products.mjs';
 import { GetReviewsByProductId, AddReview } from './controllers/reviews.mjs';
 import authorize from './authorize.mjs';
 import {db,setupDb} from './db.mjs'
@@ -15,7 +15,7 @@ const corsOptions = {
  
 const app = express();
 const port = 3000;
-app.use(cors())
+app.use(cors({origin: `http://localhost:8000`}))
 app.use(express.json());
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -35,6 +35,9 @@ app.get('/api/products/:id', GetById)
 
 app.get('/api/products/reviews/:productId', GetReviewsByProductId);
 app.post('/api/products/reviews', AddReview);
+
+//checkout 
+app.post('/create-checkout-session', Payment)
 
 app.use(bodyParser.json());
 
