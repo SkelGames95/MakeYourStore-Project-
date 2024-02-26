@@ -11,6 +11,7 @@ import "./App.css";
 
 import NavBara from "./Components/NavBara";
 import { News } from "./News";
+import { Credits } from "./Pages/Credits";
 
 export const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -34,6 +35,7 @@ export const App = () => {
         <Route path={`/shop/:id`} element={<SingleSection isLoggedIn={isLoggedIn} token ={isLoggedIn}/>} />
         <Route path={`/cart`} element={<Carrello />} />
         <Route path={`/news`} element={<News />} />
+        <Route path={`/credits`} element={<Credits />} />
       </Routes>
       <Footer />
     </div>
