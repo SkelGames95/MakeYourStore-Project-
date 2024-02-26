@@ -54,6 +54,7 @@ export function Carrello() {
       }
       
       const session = await response.json();
+      window.location = data.url;
 
       const result = stripe.redirectToCheckout({
         sessionId: session.id,
