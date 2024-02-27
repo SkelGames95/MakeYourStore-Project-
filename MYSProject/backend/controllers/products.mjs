@@ -46,8 +46,9 @@ const GetById = async (req, res) => {
 
 //Checkout
 const Payment = async (req, res) => {
-  try { 
+  try {
     const { products } = req.body;
+    console.log("backend product " + products);
     const lineItems = products.map((item) => ({
       price_data: {
         currency: "eur",
@@ -62,11 +63,11 @@ const Payment = async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
-      line_items: lineItems,
+      line_items:lineItems, 
       success_url: "http://localhost:8000/success",
       cancel_url: "http://localhost:8000/cancel",
     });
-
+    console.log(session.status);
     if (session.url) {
       res.redirect(303, session.url);
     }

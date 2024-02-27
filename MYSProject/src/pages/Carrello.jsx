@@ -28,17 +28,15 @@ export function Carrello() {
   const makePayment = async () => {
     try {
       // Create a Stripe client
-      // const product = localStorage.getItem("carrello");
       const stripe = await loadStripe(
         "pk_test_51Ok6pQFebw0p02EeDOKgRhiONS1KIObtnaghoamB0niM0qfbTNALDWQH2ekDG9we72rI43E45bnf4HOos7039SJF00zcYFLrJu"
       );
-        const body ={
-          products: cart,
-        }
+      const body = {
+        products: cart,
+      };
       const headers = {
         "Content-type": "application/json",
       };
-      console.log(body);
       const response = await fetch(
         "http://localhost:3000/create-checkout-session",
         {
@@ -48,13 +46,17 @@ export function Carrello() {
           body: JSON.stringify(body),
         }
       );
+      console.log(response);
       if (!response.ok) {
-        console.log('Failed to create checkout session:', response.statusText);
+        console.log("Failed to create checkout session:", response.status);
         return;
       }
       
+
       const session = await response.json();
-      window.location = data.url;
+      console.log(session);
+      // window.location = session.url;
+      windows.location.href = body.url;
 
       const result = stripe.redirectToCheckout({
         sessionId: session.id,
