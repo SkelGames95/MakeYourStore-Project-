@@ -1,20 +1,22 @@
 .welcome-container {
   width: 100%;
-  height: 300px;
+  /* height: 300px; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 500px;
+  /* margin-bottom: 500px; */
+  margin-top: 2rem;
 }
 
 .main-title {
   font-size: 72px;
   color: white;
+
 }
 
 .container {
   margin: 5rem;
-  height: 300px;
+  height: 100%;
   width: 70%;
   padding: 1rem;
   background-color: rgb(177, 177, 177);
@@ -23,10 +25,29 @@
   gap: 1rem;
 }
 
+.buttonJoin-container {
+  /* margin-right:100%; */
+  font-family: LuckiestGuy;
+  /* margin-top: 500px; */
+  width: 100% !important;
+  margin-bottom: 5rem;
+  /* height: 30px; */
+}
+
+.buttonJoin {
+  padding: 1.5rem;
+  margin: 0 auto;
+  width: 282px;
+  height: 50px;
+  /* margin-bottom: 10rem; */
+  padding-bottom: 1rem;
+}
+
 .welcome-img {
-  height: 270px;
+  height: 270px;  
   width: 350px;
   border-radius: 10%;
+  object-fit: cover;
 }
 
 .content {
@@ -34,13 +55,18 @@
 }
 
 .copy {
-  font-size: 24px;
-  line-height: 2.5rem;
+  /* font-size: 24px; */
+  /* line-height: 2.5rem; */
+  font-family: CrimeFighter;
+  height: 100%;
 }
 
 @media (max-width: 1480px) {
   .copy {
     font-size: 18px;
+  }
+  .buttonJoin{
+    width: 25%;
   }
 }
 
@@ -49,20 +75,82 @@
     font-size: 14px;
     line-height: 1.3rem;
   }
-
+  .buttonJoin{
+    width: 30%;
+  }
   .container {
-    height: 200px;
+    height: 100%;
+    flex-wrap: wrap;
   }
 
   .welcome-img {
-  height: 150px;
-  width: 200px;
-  border-radius: 10%;
-}
+    height: 150px;
+    width: 200px;
+    border-radius: 10%;
+  }
 }
 
 @media (max-width: 790px) {
   .main-title {
     font-size: 50px;
+    text-align: center;
   }
+  .buttonJoin{
+    width: 40%;
+  }
+}
+
+@media (max-width: 1075px) {
+  .container {
+    height: 200%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .copy-title {
+    text-align: center;
+  }
+
+  .container img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+@media screen and (max-width:670px){
+  .buttonJoin{
+    width: 50%;
+  }
+}
+@media (max-width: 545px) {
+  .copy {
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .container img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+@media (max-width: 450px) {
+.buttonJoin{
+  width: 65%;
+}
+}
+@media (max-width: 425px) {
+  .copy {
+    text-align: center;
+    font-size: 8px;
+  }
+}
+@media (max-width: 375px) {
+  .copy {
+    text-align: center;
+    font-size: 6px;
+  }
+}
+@media (max-width: 320px) {
+ .buttonJoin{
+  width: 90%;
+ }
 }

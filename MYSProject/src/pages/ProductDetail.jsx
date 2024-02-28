@@ -4,13 +4,25 @@ import { useEffect, useState } from 'react'
 import { Carousel } from '../Components/Carousel'
 import { ReviSection } from '../Components/ReviewSection'
 import { Button } from '../Components/Button'
+// import { useAuth } from '../Components/useToken'
 
-export function SingleSection({ }) {
+
+
+export function SingleSection() {
     const [singleProduct, setsingleProduct] = useState({})
     const { id } = useParams()
     const location = useLocation()
     const queryParams = new URLSearchParams(location.search);
     const category = queryParams.get("category");
+    // const { isLoggedIn } = useAuth()
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const token = localStorage.getItem('token');
+
+    useEffect(() => {
+        setIsLoggedIn(!!token);
+        // console.log(token);
+    }, [token]);
 
     async function fetchOnesingleProduct() {
         const response = await fetch(`http://localhost:3000/api/products/${Number(id)}`)
@@ -29,7 +41,6 @@ export function SingleSection({ }) {
     const [MYS, setMYS] = useState([]);
     const [showMessage, setShowMessage] = useState(false);
 
-
     async function fetchCategory(category, setter) {
         const response = await fetch(`http://localhost:3000/api/products/category/${category}`)
         const responseJson = await response.json()
@@ -41,11 +52,19 @@ export function SingleSection({ }) {
         fetchCategory("MYS", setMYS)
     }, [])
 
-    useEffect(()=>{
-        window.scrollTo(0, 0);
-      },[singleProduct.id])
+    const [error, setError] = useState({})
+
 
     function addToCart() {
+        if (!isLoggedIn) {
+            const newError = { logged: "You are not logged, please log in to start to buy!" }
+            setError(newError);
+            setTimeout(() => {
+              setError({}); // Nasconde il messaggio di errore dopo 2 secondi
+            }, 2000);
+            return;
+          }
+
         const product = {
             id: singleProduct.id,
             name: singleProduct.name,
@@ -72,13 +91,13 @@ export function SingleSection({ }) {
         }
         setInput(1)
 
-                // Mostra il messaggio "Prodotto aggiunto al carrello"
-                setShowMessage(true);
+        // Mostra il messaggio "Prodotto aggiunto al carrello"
+        setShowMessage(true);
 
-                // Resetta lo stato del messaggio dopo 2 secondi
-                setTimeout(() => {
-                    setShowMessage(false);
-                }, 2000);
+        // Resetta lo stato del messaggio dopo 2 secondi
+        setTimeout(() => {
+            setShowMessage(false);
+        }, 2000);
     }
 
     function handleInput(event) {
@@ -96,7 +115,7 @@ export function SingleSection({ }) {
                         </p>
                         <h4 >Price:</h4><p className='price'>{singleProduct.price}€</p>
                         <div className="buttonInput">
-                            <Button onClick={addToCart} label="Add to Cart" />
+                            <Button onClick={addToCart} label="Add to Cart" className="addToCart" />
                             <label htmlFor="quantity" className="quantity">
                                 Quantity:
                             </label>
@@ -105,13 +124,15 @@ export function SingleSection({ }) {
                                 id="quantity"
                                 value={input}
                                 onChange={handleInput}
+                                className="numberInput"
                             />
                         </div>
                     </div>
                 </div>
             </div>
+            {error.logged && <p className='notLogged' style={{ color: "red", textAlign: "center", fontSize: "24px" }}>{error.logged}</p>}
             {showMessage && <p className="aggiunto">Product added to cart!</p>}
-            <ReviSection productId={singleProduct.id} />
+            <ReviSection productId={singleProduct.id} isLoggedIn={isLoggedIn} />
             <div className="sliderContainer">
                 <h2 className='potrebbe'>POTREBBE INTERESSARTI ANCHE</h2>
                 <Carousel items={gadgets} category="Gadgets" />

@@ -1,8 +1,18 @@
+@font-face {
+  font-family: CrimeFighter;
+  src: url(../Font/CRIMFBRG.TTF);
+}
+
+@font-face {
+  font-family: LuckiestGuy;
+  src: url(../Font/luckiest-guy.regular.ttf);
+}
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: fantasy;
+    font-family: LuckiestGuy;
 }
 .container{
     height: 100vh;
@@ -10,6 +20,7 @@
     align-items: center;
     justify-content: center;
     background-image: url("Prova-sfondo-slide.png");
+    margin-bottom: 7rem;
 }
 
 .register{
@@ -27,7 +38,7 @@
     display: flex;
     flex-direction: row-reverse;
     border: 1px solid rgba(0, 0, 0, 0.289);
-    border-radius: 15px; 
+    border-radius: 15px;
     background-color: transparent;
     backdrop-filter: blur(30px);
     border: 1px solid rgba(245, 245, 245, 0.034);
@@ -47,7 +58,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
 }
 
 .form{
@@ -103,7 +114,7 @@
     font-size: 1vw;
 }
 .alreadyHave a {
-    color: #ddea6f;
+    color: orange;
     text-decoration: none;
 }
 .error{
@@ -127,7 +138,7 @@
         background-position: center;
         background-size: cover;
         border-radius: 20px;
-       
+
     }
   .containerForm{
     width: 70vw;

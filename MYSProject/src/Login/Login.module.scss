@@ -1,9 +1,21 @@
+@font-face {
+  font-family: CrimeFighter;
+  src: url(../Font/CRIMFBRG.TTF);
+}
+
+@font-face {
+  font-family: LuckiestGuy;
+  src: url(../Font/luckiest-guy.regular.ttf);
+}
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: fantasy;
+  font-family: LuckiestGuy;
 }
+
+
 .containerlogin{
   height: 100vh;
   display: flex;
@@ -12,6 +24,7 @@
   background-position: center;
   background-size: cover;
   background-image: url("Prova-sfondo-slide.png");
+  margin-bottom: 7rem;
 }
 
 .buttonLogin{
@@ -125,7 +138,7 @@
   font-size: 1.2vw;
 }
 .donthave a {
-  color: #ddea6f;
+  color: orange;
   text-decoration: none;
 }
 
