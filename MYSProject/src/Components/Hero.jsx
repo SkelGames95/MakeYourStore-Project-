@@ -1,6 +1,6 @@
 import "./Hero.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-italia/dist/css/bootstrap-italia.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap-italia/dist/css/bootstrap-italia.min.css";
 import { HomepageButton } from "./HomepageButton";
 import { Link } from "react-router-dom";
 import Button from "../Button-LogReg/Button";

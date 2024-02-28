@@ -6,8 +6,6 @@ import { Carrello } from "./Pages/Carrello";
 import { Homepage } from "./Pages/Homepage";
 import Login from "./Login/Login";
 import Register from "./Login/Register";
-import Footer from "./Footer";
-import "./App.css";
 
 import NavBara from "./Components/NavBara";
 import { News } from "./News";

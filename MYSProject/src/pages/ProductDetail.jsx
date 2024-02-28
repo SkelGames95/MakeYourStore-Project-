@@ -25,7 +25,7 @@ export function SingleSection() {
     }, [token]);
 
     async function fetchOnesingleProduct() {
-        const response = await fetch(`http://localhost:3000/api/products/${id}`)
+        const response = await fetch(`http://localhost:3000/api/products/${Number(id)}`)
         const responseJson = await response.json()
         setsingleProduct(responseJson)
     }
@@ -53,6 +53,7 @@ export function SingleSection() {
     }, [])
 
     const [error, setError] = useState({})
+
 
     function addToCart() {
         if (!isLoggedIn) {

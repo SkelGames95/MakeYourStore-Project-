@@ -20,6 +20,10 @@ export function ShopSection() {
         fetchCategory("MYS", setMYS)
     }, [])
 
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      },[])
+
     return (
         <div className="container-el">
             <div className="intestazione-container">
