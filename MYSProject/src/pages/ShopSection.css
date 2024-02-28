@@ -33,11 +33,6 @@
     flex-direction: column;
 }
 
-.category {
-    font-family: LuckiestGuy;
-    text-align: center;
-}
-
 .intestazione {
     width: 50%;
     display: flex;
@@ -55,7 +50,6 @@
 
 .intestazione h3 {
 font-family: CrimeFighter;
-font-size: 40px;
 }
 
 .NavBarPlaceholder {
@@ -101,10 +95,10 @@ font-size: 40px;
 }
 
 @media screen and (max-width: 768px) {
-.intestazione h3 {
-    font-size: 20px !important;
-    width: 100%;
-    }
+.sliderContainer{
+    /* text-align: center; */
 }
-@media screen and (max-width: 400px) {
+.intestazione h3 {
+    font-size: 20px;
+    }
 }

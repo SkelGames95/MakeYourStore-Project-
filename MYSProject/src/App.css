@@ -1,5 +1,0 @@
-:focus:not(.focus--mouse), .form-check [type=checkbox]:focus+label, .form-check [type=radio]:focus+label, .toggles label input[type=checkbox]:focus+.lever {
-    border-color: #995c00 !important;
-    box-shadow: 0 0 0 2px #995c0000 !important;
-    outline: none !important;
-}

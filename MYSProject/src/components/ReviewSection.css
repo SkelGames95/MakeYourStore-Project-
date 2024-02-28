@@ -73,28 +73,17 @@
     font-size: 24px;
 }
 
-.submit {
-    font-family: LuckiestGuy;
-    border-radius: 10px;
-    width: 20%;
-    font-size: 20px;
-}
-
 .review-inner p {
     font-family: CrimeFighter;
     font-size: 24px;
 }
 
+.average-rating {
+    font-size: 30px;
+}
 
 .average-rating span {
     color: orange;
-    font-size: 30px;
-    font-family: LuckiestGuy;
-}
-.average-rating p {
-    color: white;
-    font-size: 30px;
-    font-family: LuckiestGuy;
 }
 
 @media screen and (max-width: 768px) {

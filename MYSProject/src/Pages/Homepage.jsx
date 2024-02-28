@@ -11,9 +11,11 @@ function onSearch(data) {
 export function Homepage() {
   return (
     <div>
+      {/* <Nav /> */}
       <Hero />
-      {/* <Searchbar onSearch={onSearch} /> */}
+      <Searchbar onSearch={onSearch} />
       <Welcome />
+      {/* <Footer /> */}
     </div>
   );
 }
