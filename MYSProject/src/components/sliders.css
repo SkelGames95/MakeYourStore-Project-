@@ -11,8 +11,8 @@
     width: 105%;
     padding: 1rem;
     /* backdrop-filter: blur(3px); */
-    /* background: linear-gradient(135deg,rgba(255, 166, 0, 0.082),rgba(0, 0, 0, 0));
-    filter: drop-shadow(3px 3px 10px #ffffff31); */
+    background: linear-gradient(135deg,rgba(255, 166, 0, 0.082),rgba(0, 0, 0, 0));
+    filter: drop-shadow(3px 3px 10px #ffffff31);
 }
 
 .Link:hover {
@@ -36,9 +36,6 @@
 
 .scoprilo {
     width: 300px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-family: LuckiestGuy;
 }
 
 .singleCard img:hover {
@@ -49,16 +46,13 @@
 .singleCard img {
     max-width: 300px;
     object-fit: contain;
+
 }
 
 .singleCard h2 {
     margin-top: .5rem;
     font-size: 24px;
-    color: orange;
-    font-family: LuckiestGuy;
-}
-.Link {
-text-decoration: none;
+    color: orange
 }
 
 .scopri {
@@ -119,6 +113,8 @@ text-decoration: none;
     }
 
     .singleCard {
+        /* width: 100px; */
+        /* padding-left: 30%; */
         align-items: center;
         justify-content: center;
         align-self: center;
@@ -135,13 +131,4 @@ text-decoration: none;
     }
 
 
-}
-@media screen and (max-width: 400px) {
-    .singleCard img {
-        max-width: 200px;
-        object-fit: contain;
-    }
-    .scoprilo{
-        width: 200px;
-    }
 }

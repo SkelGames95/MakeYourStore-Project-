@@ -6,7 +6,7 @@ export function Nav() {
     <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/news">News</Link>
         </li>
         <li>
           <Link to="/shop">Shop</Link>
@@ -18,7 +18,7 @@ export function Nav() {
           <Link to="/credits">Credits</Link>
         </li>
         <li>
-          <Link to="/login">
+          <Link to="/profile">
             <i className="fa fa-user"></i> Profilo
           </Link>
         </li>
