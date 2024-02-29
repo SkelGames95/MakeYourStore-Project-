@@ -3,3 +3,6 @@
     box-shadow: 0 0 0 2px #995c0000 !important;
     outline: none !important;
 }
+#root>div{
+    min-height: 100vh;
+}

@@ -29,7 +29,7 @@ const GetById = async (req, res) => {
     const {id} = req.params;
     try {
         const product = await db.one('SELECT * FROM products WHERE id = $1', Number(id));
-        res.json(product);    
+        res.json(product);
     } catch (error) {
         // Gestisci gli errori e invia una risposta di errore
         console.error('Error fetching product by ID:', error);
@@ -40,7 +40,7 @@ const GetById = async (req, res) => {
 const Payment = async (req, res) => {
     try {
       const { products } = req.body;
-    
+
       const lineItems = products.map((item) => ({
         price_data: {
           currency: "eur",
@@ -55,13 +55,13 @@ const Payment = async (req, res) => {
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         mode: "payment",
-        line_items:lineItems, 
+        line_items:lineItems,
         success_url: "http://localhost:8000/success",
         cancel_url: "http://localhost:8000/cancel",
       });
-  
+
       res.json({id: session.id})
-      
+
     } catch (err) {
       console.error(err);
       res.status(500).send("Failed to create Stripe session");
