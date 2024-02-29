@@ -82,19 +82,3 @@
   }
 }
 
-@media (max-width: 750px) {
-  .main-container {
-    padding-bottom: 30%;
-  }
-}
-
-@media (max-width: 390px) {
-  .main-container {
-    margin-bottom: 40%;
-  }
-}
-@media (max-width: 290px) {
-  .main-container {
-    margin-bottom: 60%;
-  }
-}

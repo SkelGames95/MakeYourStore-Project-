@@ -13,17 +13,18 @@
    background-size: cover;
    background-position: center;
    height: 100%;
+   margin-bottom: 5%;
 }
 
 #p-news{
    color: whitesmoke;
    width: 50%;
-   text-align: center;  
+   text-align: center;
    border: 2px solid orange;
    border-radius: 30px;
    padding: 1%;
    cursor: pointer;
-   font-family: CrimeFighter;   
+   font-family: CrimeFighter;
 }
 
 #p-news h3{

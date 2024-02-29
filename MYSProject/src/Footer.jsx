@@ -1,8 +1,12 @@
+import { Link, useNavigate } from "react-router-dom";
 import classes from "./Footer.module.scss";
 
 export const Footer = () => {
+
+  const navigate = useNavigate()
+
   return (
-    <div>
+    <div className = {classes.mainFooterDiv}>
       <footer className={classes.footerMain}>
         <div className={`${classes.container}`}>
           <div className={`${classes.bigButton} ${classes.WH}`}>
@@ -11,23 +15,23 @@ export const Footer = () => {
                 <p>
                   Join us on
                 </p>
-                <a href="#" className={classes.kickIcon}>
+                <Link to="" className={classes.kickIcon}>
                   <img
                     src="../assets/images/Kickstarter-Logo.png"
                     alt="Kickstarter Logo"
                     className={classes.kickIconImg}
                   />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
           <div className={classes.container2}>
             <div className={`${classes.footerLogoContainer} ${classes.WH}`}>
               <div className={classes.footerLogo}>
-                <a href="#">
+                <Link to="/">
                   <img src="../assets/images/MYS-Logo.jpg" alt="" width="120px" height="50px" />
-                  </a>
-                  <a href="#" className={classes.strong}>Make Your Story</a>
+                </Link>
+                <Link to="/" className={classes.strong}>Make Your Story</Link>
               </div>
             </div>
             <div className={`${classes.links} ${classes.WH}`}>
@@ -38,7 +42,7 @@ export const Footer = () => {
             <div className={`${classes.links} ${classes.WH}`}>
               <h3 className={classes.h3}>Company</h3>
               <a href="#">About us</a>
-              <a href="#">Credits</a>
+              <Link to="/credits">Credits</Link>
               <a href="#">Contact us</a>
             </div>
             <div
@@ -51,7 +55,7 @@ export const Footer = () => {
             <div className={`${classes.links} ${classes.WH}`}>
               <h3 className={classes.h3}>Follow us</h3>
               <div className={`${classes.icons} ${classes.WH}`}>
-                <img src="../assets/images/facebook.png" alt="f" width="30px" height="30px" />
+                <img src="../assets/images/facebook.png" alt="f" width="30px" height="30px" onClick={() => {navigate('/')}}/>
                 <img src="../assets/images/facebook.png" alt="f" width="30px" height="30px" />
                 <img src="../assets/images/facebook.png" alt="f" width="30px" height="30px" />
                 <img src="../assets/images/facebook.png" alt="f" width="30px" height="30px" />

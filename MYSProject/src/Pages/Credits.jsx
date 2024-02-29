@@ -61,14 +61,6 @@ export function Credits() {
                   Verdiana Simonetti
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://github.com/gabrieleprovenzano"
-                  className="font"
-                >
-                  Gabriele Provenzano
-                </a>
-              </li>
             </ul>
           </div>
         </div>
