@@ -11,6 +11,7 @@
     "dev": "vite"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^3.0.6",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "font-awesome": "^4.7.0",
@@ -24,7 +25,8 @@
     "react-router-dom": "^6.21.3",
     "react-slick": "^0.30.1",
     "slick": "^1.12.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "stripe": "^14.18.0"
   },
   "devDependencies": {
     "@types/passport-jwt": "^4.0.1",
