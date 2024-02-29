@@ -48,7 +48,7 @@ const GetById = async (req, res) => {
 const Payment = async (req, res) => {
   try {
     const { products } = req.body;
-    console.log("backend product " + products);
+  
     const lineItems = products.map((item) => ({
       price_data: {
         currency: "eur",
@@ -67,10 +67,9 @@ const Payment = async (req, res) => {
       success_url: "http://localhost:8000/success",
       cancel_url: "http://localhost:8000/cancel",
     });
-    console.log(session.status);
-    if (session.url) {
-      res.redirect(303, session.url);
-    }
+
+    res.json({id: session.id})
+    
   } catch (err) {
     console.error(err);
     res.status(500).send("Failed to create Stripe session");

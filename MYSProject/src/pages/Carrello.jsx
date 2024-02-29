@@ -3,14 +3,15 @@ import { useSearchParams } from "react-router-dom";
 import "./Carrello.css";
 import { Button } from "../Components/Button";
 import { loadStripe } from "@stripe/stripe-js";
+import { useNavigate,Link } from "react-router-dom"
 
 export function Carrello() {
   const [cart, setCart] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const product = localStorage.getItem("carrello");
     setCart(JSON.parse(product));
-    console.log(cart);
   }, []);
 
   function handleRemove(indexToRemove) {
@@ -46,21 +47,17 @@ export function Carrello() {
           body: JSON.stringify(body),
         }
       );
-      console.log(response);
       if (!response.ok) {
         console.log("Failed to create checkout session:", response.status);
         return;
       }
       
-
       const session = await response.json();
-      console.log(session);
-      // window.location = session.url;
-      windows.location.href = body.url;
-
-      const result = stripe.redirectToCheckout({
-        sessionId: session.id,
-      });
+    
+      navigate(stripe.redirectToCheckout({
+        sessionId:session.id
+      }))
+      
     } catch (error) {
       console.log(error.message);
     }
@@ -102,7 +99,7 @@ export function Carrello() {
               <span>Total</span>: {cartTotal.toFixed(2)}€
             </p>
           )}
-          <Button label="Checkout" onClick={makePayment} />
+          <Button label="Checkout" onClick={makePayment } />
         </div>
       )}
     </div>
