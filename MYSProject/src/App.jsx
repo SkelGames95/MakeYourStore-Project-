@@ -12,6 +12,8 @@ import "./App.css";
 
 import NavBara from "./Components/NavBara";
 import { News } from "./News";
+import Cancel from "./Pages/Cancel";
+import Success from "./Pages/Success";
 
 export const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -31,6 +33,8 @@ export const App = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login handleLogin={handleLogin}/>} />
         <Route path="/register" element={<Register />} />
+        <Route path="/cancel" element={<Cancel />} />
+        <Route path="/success" element={<Success />} />
         <Route path="/shop" element={<ShopSection />} />
         <Route path={`/shop/:id`} element={<SingleSection isLoggedIn={isLoggedIn} token ={isLoggedIn}/>} />
         <Route path={`/cart`} element={<Carrello />} />
