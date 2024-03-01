@@ -9,7 +9,7 @@ function Success() {
     const timer = setTimeout(() => {
       navigate('/');
     }, 3000); 
-
+    localStorage.clear();
     return () => clearTimeout(timer); // This will clear the timer when the component unmounts
   }, [navigate]);
 
