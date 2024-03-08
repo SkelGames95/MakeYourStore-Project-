@@ -1,0 +1,168 @@
+@font-face {
+  font-family: CrimeFighter;
+  src: url(../Font/CRIMFBRG.TTF);
+}
+
+@font-face {
+  font-family: LuckiestGuy;
+  src: url(../Font/luckiest-guy.regular.ttf);
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.buttonShopNow {
+  /* margin: auto; */
+  font-family: LuckiestGuy;
+  margin-top: 500px;
+  padding: 1rem;
+  width: 200% !important;
+}
+
+.positionButton {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: bisque;
+  margin-right: 150px;
+  text-decoration: none !important;
+}
+
+
+.img-wrapper {
+  background-image: url(../assets/images/background-hero.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  margin-top: 72px;
+}
+
+@media screen and (max-width: 888px) {
+  .hero {
+    height: 500px;
+  }
+
+  .img-wrapper {
+    background-image: url(../assets/images/background-hero666px.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+  }
+  .buttonShopNow{
+    position:relative;
+    top: 30px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .hero {
+    height: 250px;
+  }
+
+  .img-wrapper {
+    background-image: url(../assets/images/background-hero450px.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+  }
+
+}
+@media screen and (max-width: 550px) {
+  .hero {
+    height: 700px;
+  }
+
+  .img-wrapper {
+    background-image: url(../assets/images/background-hero300px.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+  }
+
+}
+
+@media screen and (max-width:670px){
+  .buttonShopNow{
+     width: 50%;
+  }
+  }
+  @media (max-width: 1365px) {
+    .buttonShopNow{
+      width: 30%;
+    }
+  }
+
+
+  @media screen and (max-width: 500px) {
+    .hero {
+      height: 670px;
+    }
+  
+    .img-wrapper {
+      background-image: url(../assets/images/background-hero300px.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100%;
+    }
+  
+  }
+  @media screen and (max-width: 468px) {
+    .hero {
+      height:630px;
+    }
+  
+    .img-wrapper {
+      background-image: url(../assets/images/background-hero300px.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100%;
+    }
+  
+  }
+  @media screen and (max-width: 442px) {
+    /* .hero {
+      height:420px;
+    }
+  
+    .img-wrapper {
+      background-image: url(../assets/images/background-hero900px.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100%;
+    } */
+    .buttonShopNow{
+      position:relative;
+      top: 25px;
+    }
+
+  
+  }
+   @media screen and (max-width: 324px) {
+    /* .hero {
+      height:100vw;
+    } */
+   .buttonShopNow{
+      position:relative;
+      top: 100%;
+    }
+    /* .img-wrapper {
+      background-image: url(../assets/images/background-hero900px.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100%;
+    }
+   */
+  } 

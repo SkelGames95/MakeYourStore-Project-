@@ -1,0 +1,170 @@
+.container-elShop {
+    background-image: url(./images/provaBackground.png);
+    /* background-color: black; */
+    width: 100%;
+    height: 100%;
+    font-family: LuckiestGuy;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+}
+
+@font-face {
+    font-family: CrimeFighter;
+    src: url(../Font/CRIMFBRG.TTF);
+}
+
+@font-face {
+    font-family: LuckiestGuy;
+    src: url(../Font/luckiest-guy.regular.ttf);
+}
+
+.rightside {
+    padding-left: 1rem;
+    width: 75%;
+    /* flex-wrap: wrap; */
+}
+
+.cardsWrapper {
+    /* background-image: url(./images/provaBackground.png);     */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.singleProduct {
+    display: flex;
+    width: 75%;
+    /* flex-wrap: wrap; */
+    margin-top: 6rem;
+}
+
+.singleProduct img {
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
+}
+
+.singleProduct img:hover {
+    scale: 105%;
+    transition: 1s;
+}
+
+.aggiungi {
+    color: black;
+    padding: .5rem;
+    background-color: orange;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.aggiungi:hover {
+    transform: scale(110%);
+    transition: 0.2s;
+}
+
+.potrebbe {
+    color: orange;
+    font-family: LuckiestGuy;
+}
+
+.aggiunto {
+    text-align: center;
+    font-size: 30px;
+    color: orange;
+    font-family: LuckiestGuy;
+}
+
+.price {
+    font-size: 30px;
+    color: white;
+}
+
+.rightside h4 {
+    font-style: italic;
+    color: orange;
+    font-size: 30px;
+    font-family: LuckiestGuy;
+}
+
+.rightside h5 {
+    color: orange;
+}
+
+.rightside input {
+    /* margin-left: .5rem; */
+    /* margin-top: 1rem; */
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 1px orange !important;
+    color: orange;
+    border-radius: 3px !important;
+    padding: .5rem !important;
+}
+
+.rightside p {
+    font-family: CrimeFighter;
+    font-size: 20px;
+}
+
+.addToCart {
+    font-family: LuckiestGuy;
+    border-radius: 10px;
+}
+
+.quantity {
+    margin-left: 1rem;
+    /* margin-top: 1rem; */
+    margin-bottom: 0rem;
+    color: white;
+    font-family: LuckiestGuy;
+    text-align: inherit;
+}
+
+.numberInput{
+    /* margin-top: 1rem; */
+    margin-left: 1rem;
+    padding: .5rem;
+    width: 30% !important;
+}
+
+.buttonInput {
+    display: flex;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+
+
+@media screen and (max-width: 768px) {
+    .singleProduct {
+        /* display: flex;
+        width: 75%; */
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        /* margin-top: 6rem; */
+    }
+
+    .buttonInput {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rightside p {
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .rightside p {
+        font-size: 16px;
+    }
+
+    .price {
+        font-size: 20px !important;
+    }
+}

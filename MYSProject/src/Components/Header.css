@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* / Stile per la navbar / */
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #181818;
+    color: #fff;
+    padding: 10px 40px;
+    width: 100%;
+    height: 10%;
+    background-image: url(../images/dios-01-01-01.png);
+    object-fit: contain;
+    background-position: center;
+    background-size: cover;
+}
+.photos {
+    width: 80%;
+}
+.photos:hover {
+transform: scale(120%);
+transition: .5s;
+}
+
+.navbar-brand {
+    display: flex;
+    cursor: pointer;
+    gap: 3rem;
+    width: 40%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* / Stile per l'icona del menu hamburger nella navbar / */
+.navbar-hamburger-icon {
+    cursor: pointer;
+    width: 30px;
+    filter: invert(1)
+}
+
+/* / Stile per nascondere il menu /  */
+.navbar-menu.hidden {
+    display: none;
+}
+
+/* / Stile per il menu nella navbar /  */
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10rem;
+    font-size: 34px;
+    border-bottom: 5px solid whitesmoke;
+    text-align: center;
+    margin-top: 20px;
+    padding: 0 10px 10px 40px;
+}
+
+/* / Stile per gli elementi del menu nella navbar /  */
+.navbar-item {
+    margin-right: 20px;
+}
+
+/* / Stile per i link nel menu della navbar /  */
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-link:hover {
+    text-decoration: none;
+    color: orange;
+}
+
+.navbar-hamburger-icon {
+    cursor: pointer;
+    width: 30px;
+    filter: invert(1);
+}
+
+/* / Stile per l'icona del menu hamburger nella navbar con colori invertiti */
+
+.inverted {
+    filter: none;
+}
+
+.navbar-toggle {
+    display: flex;
+    height: 30%;
+    width: 40%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@media (max-width: 1170px) {
+    .photos {
+        width: 50%;
+    }
+}
