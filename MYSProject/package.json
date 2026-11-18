@@ -11,7 +11,7 @@
     "dev": "vite"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "bcrypt": "^6.0.0",
     "bootstrap": "^5.3.2",
     "carousel": "^0.0.3",
     "cors": "^2.8.5",
